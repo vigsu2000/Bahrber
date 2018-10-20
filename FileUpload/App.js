@@ -11,6 +11,14 @@ import firebase from 'firebase'
 import RNFetchBlob from 'react-native-fetch-blob'
 import CameraRollPicker from 'react-native-camera-roll-picker'
 export default class Gallery extends Component {
+
+  var config = {
+    apiKey: "AIzaSyA8KK3N2ldnfwQfJrDhP2QLVqIOb0lopGA",
+    authDomain: "imageupload-59d60.firebaseapp.com",
+    projectId: "imageupload-59d60",
+    storageBucket: "imageupload-59d60.appspot.com"
+  };
+  firebase.initializeApp(config);
   
   getSelectedImages = (selectedImages, currentImage) => {
     

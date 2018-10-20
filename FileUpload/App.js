@@ -15,10 +15,8 @@ export default class Gallery extends Component {
   var config = {
     apiKey: "AIzaSyA8KK3N2ldnfwQfJrDhP2QLVqIOb0lopGA",
     authDomain: "imageupload-59d60.firebaseapp.com",
-    databaseURL: "https:
     projectId: "imageupload-59d60",
-    storageBucket: "imageupload-59d60.appspot.com",
-    messagingSenderId: "1056895897006"
+    storageBucket: "imageupload-59d60.appspot.com"
   };
   firebase.initializeApp(config);
   

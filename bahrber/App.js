@@ -119,6 +119,11 @@ class DetailsScreen extends React.Component {
 }
 
 class ApplicationScreen extends React.Component {
+  //Fix form when user inputs nothing
+  handleSubmit = () => {
+    const value = this._form.getValue();
+    console.log('value: ', value);
+  };
   render() {
     return (
       <View style={styles.container0}>
@@ -126,7 +131,8 @@ class ApplicationScreen extends React.Component {
         <Form ref={c => (this._form = c)} type={User}/>
         <Button color = "black"
           title = "Onward"
-          //Will eventually do something
+          //Will eventually do something with the form
+          onPress={() => this.props.navigation.navigate('Upload')}
           />
         <Button color = "black"
           title="Go back"
@@ -135,6 +141,46 @@ class ApplicationScreen extends React.Component {
       </View>
     )
   }
+}
+
+class PictureUploadScreen extends React.Component {
+  state = {
+    image: null,
+  };
+  render() {
+    let { image } = this.state;
+
+    return (
+      <View style ={styles.container0}>
+        <Text>Upload Screen</Text>
+        <Button
+          color="black"
+          title="Pick an image from camera roll"
+          onPress={this._pickImage}
+        />
+        {image && (
+          <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />
+        )}
+        <Button color = "black"
+          title="Go back"
+          onPress={() => this.props.navigation.goBack()}
+        />
+      </View>
+    )
+  }
+
+  _pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      allowsEditing: true,
+      aspect: [4, 3],
+    });
+
+    console.log(result);
+
+    if (!result.cancelled) {
+      this.setState({ image: result.uri });
+    }
+  };
 }
 
 const RootStack = StackNavigator(
@@ -147,6 +193,9 @@ const RootStack = StackNavigator(
     },
     Application: {
       screen: ApplicationScreen,
+    },
+    Upload: {
+      screen: PictureUploadScreen,
     },
   },
   {
@@ -166,6 +215,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
+    fontSize: 16,
     color: 'black',
     marginTop: 0,
     padding: 20,

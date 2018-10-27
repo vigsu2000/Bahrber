@@ -10,34 +10,34 @@ import {
   Right,
   Title,
   Text,
-} from 'react-native';
-import { createStackNavigator } from 'react-navigation';
+  PermissionsAndroid,
+} from 'react-native'; //latest
+import { StackNavigator } from 'react-navigation'; // Version can be specified in package.json
 import t from 'tcomb-form-native'; // 0.6.19
 import { ImagePicker } from 'expo';
 
 const Form = t.form.Form;
-//Thckness, length, style, texture
-var Gender = t.enums({
-  M: 'Male',
-  F: 'Female',
-  O: 'Not applicable',
-});
-
+var Thickness = t.enums({
+  A: 'Bald',
+  B: 'Thin',
+  C: 'Thinner',
+  D: 'Regular',
+  E: 'Thick',
+  F: 'To thick to run a comb',
+})
 var HairType = t.enums({
   A: 'Rough',
   B: 'Course',
   C: 'Smooth',
   D: 'Fine',
 });
-
-var Length = t.enums({
+var DesiredLength = t.enums({
   A: 'Very long',
   B: 'Long',
   C: 'Medium',
   D: 'Short',
   E: 'Very short',
 });
-
 var Color = t.enums({
   A: 'Brown',
   B: 'Light brown',
@@ -47,18 +47,17 @@ var Color = t.enums({
   F: 'Red',
   G: 'Other',
 });
-
 const User = t.struct({
   //email: t.String,
   //username: t.maybe(t.String),
   //password: t.String,
-  gender: Gender,
+  //gender: Gender,
+  thickness: Thickness,
   hair_type: HairType,
-  desired_length: Length,
+  desired_length: DesiredLength,
   color: Color,
   terms: t.Boolean,
 });
-
 const formStyles = {
   ...Form.stylesheet,
   formGroup: {
@@ -73,7 +72,6 @@ const formStyles = {
       marginBottom: 7,
       fontWeight: '600',
     },
-    // the style applied when a validation error occours
     error: {
       color: 'red',
       fontSize: 18,
@@ -83,82 +81,94 @@ const formStyles = {
   },
 };
 
-const options = {
-  fields: {
-    email: {
-      error:
-        'Without an email address how are you going to reset your password when you forget it?',
-    },
-    password: {
-      error:
-        "Choose something you use on a dozen other sites or something you won't remember",
-    },
-    terms: {
-      label: 'Agree to Terms',
-    },
-  },
-  stylesheet: formStyles,
-};
-
-export default class HomeScreen extends Component {
-  state = {
-    image: null,
-  };
-
-  handleSubmit = () => {
-    const value = this._form.getValue();
-    console.log('value: ', value);
-  };
-
-  static navigationOptions = {
-    title: 'Details',
-  };
-
+class HomeScreen extends React.Component {
   render() {
-    let { image } = this.state;
-
     return (
       <View style={styles.container0}>
-        <Form ref={c => (this._form = c)} type={User} options={options} />
-        <Button
-          title="Pick an image from camera roll"
-          color="blue"
-          onPress={this._pickImage}
+        <Text>Welcome to Barhber</Text>
+        <Button color = "black"
+          title="Go to Application"
+          onPress={() => this.props.navigation.navigate('Details')}
         />
-        {image && (
-          <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />
-        )}
-        <Button title="Sign Up!" color="blue" onPress={this.handleSubmit} />
       </View>
     );
   }
+}
 
-  _pickImage = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
-      allowsEditing: true,
-      aspect: [4, 3],
-    });
+class DetailsScreen extends React.Component {
+  render() {
+    return (
+      <View style={styles.container0}>
+        <Text>Details Screen</Text>
+        <Text>Maybe this page would be for creating an account</Text>
+        <Button  color = "black"
+          title="Go to details... again"
+          onPress={() => this.props.navigation.push('Details')}
+        />
+        <Button color = "black"
+          title="Go to Form"
+          onPress={() => this.props.navigation.navigate('Application')}
+        />
+        <Button color = "black"
+          title="Go back"
+          onPress={() => this.props.navigation.goBack()}
+        />
+      </View>
+    );
+  }
+}
 
-    console.log(result);
+class ApplicationScreen extends React.Component {
+  render() {
+    return (
+      <View style={styles.container0}>
+        <Text>Form Screen</Text>
+        <Form ref={c => (this._form = c)} type={User}/>
+        <Button color = "black"
+          title = "Onward"
+          //Will eventually do something
+          />
+        <Button color = "black"
+          title="Go back"
+          onPress={() => this.props.navigation.goBack()}
+        />
+      </View>
+    )
+  }
+}
 
-    if (!result.cancelled) {
-      this.setState({ image: result.uri });
-    }
-  };
+const RootStack = StackNavigator(
+  {
+    Home: {
+      screen: HomeScreen,
+    },
+    Details: {
+      screen: DetailsScreen,
+    },
+    Application: {
+      screen: ApplicationScreen,
+    },
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
+
+export default class App extends React.Component {
+  render() {
+    return <RootStack />;
+  }
 }
 
 const styles = StyleSheet.create({
   container0: {
+    fontWeight: '600',
+    alignItems: 'center',
     justifyContent: 'center',
-    color: 'blue',
+    flex: 1,
+    color: 'black',
     marginTop: 0,
-    padding: 100,
-    backgroundColor: '#6495ed',
+    padding: 20,
+    backgroundColor: '#d3d3d3',
   },
-  /*container1: {
-    justifyContent: 'center',
-    marginTop: 0,
-    padding: 100,
-    backgroundColor: 'black',
-  },*/
 });

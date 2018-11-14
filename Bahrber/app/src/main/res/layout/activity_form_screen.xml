@@ -7,47 +7,105 @@
     android:fitsSystemWindows="true"
     tools:context=".FormScreen">
 
-    <android.support.constraint.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/Form_Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:text="Form Title"
-            android:textAllCaps="false"
-            android:textSize="30sp"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="137dp" />
-
         <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="191dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="69dp">
+            android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/formTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:text="TextView"
-                app:layout_constraintBottom_toTopOf="@+id/editText"
-                tools:layout_editor_absoluteX="163dp" />
+                android:layout_marginTop="28dp"
+                android:text="Form Title"
+                android:textAllCaps="false"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/editText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name"
-                tools:layout_editor_absoluteX="85dp"
-                tools:layout_editor_absoluteY="140dp" />
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="191dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/formTitle">
 
+                <TextView
+                    android:id="@+id/length"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Length"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/lengthLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="114dp"
+                    android:layout_marginBottom="36dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/length">
+
+                    <Button
+                        android:id="@+id/buttonShort"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#ffcba481"
+                        android:text="Short"
+                        android:textColor="#ffffffff"
+                        android:textSize="24sp"
+                        android:typeface="sans" />
+
+                    <Button
+                        android:id="@+id/buttonMedium"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#ffb79a82"
+                        android:text="Medium"
+                        android:textColor="#ffffffff"
+                        android:textSize="24sp"
+                        android:typeface="sans" />
+
+                    <Button
+                        android:id="@+id/buttonLong"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#ffbfa896"
+                        android:text="Long"
+                        android:textColor="#ffffffff"
+                        android:textSize="24sp"
+                        android:typeface="sans" />
+
+                </LinearLayout>
+
+            </android.support.constraint.ConstraintLayout>
         </android.support.constraint.ConstraintLayout>
-    </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+    <Switch
+        android:id="@+id/terms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Terms"
+        app:layout_anchor="@+id/constraintLayout"
+        app:layout_anchorGravity="right|bottom" />
 
 </android.support.design.widget.CoordinatorLayout>

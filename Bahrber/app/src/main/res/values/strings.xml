@@ -95,4 +95,27 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="thickness">Thickness</string>
+    <string name="desired_length">Desired Length</string>
+    <string name="shortLength">Short</string>
+    <string name="mediumLength">Medium</string>
+    <string name="longLength">Long</string>
+    <string name="form_title">Form Title</string>
+    <string name="fine">Fine</string>
+    <string name="mediumThickness">Medium</string>
+    <string name="coarse">Coarse</string>
+    <string name="terms">Terms</string>
+    <string name="hair_type">Hair Type</string>
+    <string name="_4c">4c</string>
+    <string name="_4b">4b</string>
+    <string name="_4a">4a</string>
+    <string name="_3c">3c</string>
+    <string name="_3b">3b</string>
+    <string name="_3a">3a</string>
+    <string name="_2c">2c</string>
+    <string name="_2b">2b</string>
+    <string name="_2a">2a</string>
+    <string name="_1c">1c</string>
+    <string name="_1b">1b</string>
+    <string name="_1a">1a</string>
 </resources>

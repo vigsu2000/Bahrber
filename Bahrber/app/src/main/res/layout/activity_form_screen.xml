@@ -9,7 +9,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/constraintLayout"
@@ -21,7 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:text="Form Title"
+                android:text="@string/form_title"
                 android:textAllCaps="false"
                 android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -29,8 +29,206 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayoutHairType"
                 android:layout_width="match_parent"
-                android:layout_height="191dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutThickness"
+                tools:layout_editor_absoluteX="0dp">
+
+                <TextView
+                    android:id="@+id/hairType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hair_type"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/hairTypeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="610dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/hairType"
+                    tools:layout_editor_absoluteX="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/hairType1Layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="114dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/button1a"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#ffcba481"
+                            android:text="@string/_1a"
+                            android:textColor="#ffffffff"
+                            android:textSize="30sp"
+                            android:typeface="sans" />
+
+                        <Button
+                            android:id="@+id/button1b"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#ffb79a82"
+                            android:text="@string/_1b"
+                            android:textColor="#ffffffff"
+                            android:textSize="30sp"
+                            android:typeface="sans" />
+
+                        <Button
+                            android:id="@+id/button1c"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#ffbfa896"
+                            android:text="@string/_1c"
+                            android:textColor="#ffffffff"
+                            android:textSize="30sp"
+                            android:typeface="sans" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hairType2Layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="114dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@+id/hairType1Layout"
+                        tools:layout_editor_absoluteX="0dp">
+
+                        <Button
+                            android:id="@+id/button2a"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#ffbfa896"
+                            android:text="@string/_2a"
+                            android:textColor="#ffffffff"
+                            android:textSize="30sp"
+                            android:typeface="sans" />
+
+                        <Button
+                            android:id="@+id/button2b"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#ffcba481"
+                            android:text="@string/_2b"
+                            android:textColor="#ffffffff"
+                            android:textSize="30sp"
+                            android:typeface="sans" />
+
+                        <Button
+                            android:id="@+id/button2c"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#ffb79a82"
+                            android:text="@string/_2c"
+                            android:textColor="#ffffffff"
+                            android:textSize="30sp"
+                            android:typeface="sans" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hairType3Layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="114dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@+id/hairType2Layout">
+
+                        <Button
+                            android:id="@+id/button3a"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#ffb79a82"
+                            android:text="@string/_3a"
+                            android:textColor="#ffffffff"
+                            android:textSize="30sp"
+                            android:typeface="sans" />
+
+                        <Button
+                            android:id="@+id/button3b"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#ffbfa896"
+                            android:text="@string/_3b"
+                            android:textColor="#ffffffff"
+                            android:textSize="30sp"
+                            android:typeface="sans" />
+
+                        <Button
+                            android:id="@+id/button3c"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#ffcba481"
+                            android:text="@string/_3c"
+                            android:textColor="#ffffffff"
+                            android:textSize="30sp"
+                            android:typeface="sans" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hairType4Layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="114dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@+id/hairType3Layout"
+                        tools:layout_editor_absoluteX="0dp">
+
+                        <Button
+                            android:id="@+id/button4a"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#ffcba481"
+                            android:text="@string/_4a"
+                            android:textColor="#ffffffff"
+                            android:textSize="30sp"
+                            android:typeface="sans" />
+
+                        <Button
+                            android:id="@+id/button4b"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#ffb79a82"
+                            android:text="@string/_4b"
+                            android:textColor="#ffffffff"
+                            android:textSize="30sp"
+                            android:typeface="sans" />
+
+                        <Button
+                            android:id="@+id/button4c"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#ffbfa896"
+                            android:text="@string/_4c"
+                            android:textColor="#ffffffff"
+                            android:textSize="30sp"
+                            android:typeface="sans" />
+
+                    </LinearLayout>
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayoutLength"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
                 android:layout_marginTop="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -41,8 +239,7 @@
                     android:id="@+id/length"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Length"
+                    android:text="@string/desired_length"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.501"
@@ -53,10 +250,8 @@
                     android:id="@+id/lengthLayout"
                     android:layout_width="match_parent"
                     android:layout_height="114dp"
-                    android:layout_marginBottom="36dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="16dp"
                     android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/length">
@@ -67,18 +262,18 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="#ffcba481"
-                        android:text="Short"
+                        android:text="@string/shortLength"
                         android:textColor="#ffffffff"
                         android:textSize="24sp"
                         android:typeface="sans" />
 
                     <Button
-                        android:id="@+id/buttonMedium"
+                        android:id="@+id/buttonMediumLength"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="#ffb79a82"
-                        android:text="Medium"
+                        android:text="@string/mediumLength"
                         android:textColor="#ffffffff"
                         android:textSize="24sp"
                         android:typeface="sans" />
@@ -89,7 +284,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="#ffbfa896"
-                        android:text="Long"
+                        android:text="@string/longLength"
                         android:textColor="#ffffffff"
                         android:textSize="24sp"
                         android:typeface="sans" />
@@ -97,15 +292,68 @@
                 </LinearLayout>
 
             </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayoutThickness"
+                android:layout_width="match_parent"
+                android:layout_height="231dp"
+                android:layout_marginTop="29dp"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutLength"
+                tools:layout_editor_absoluteX="0dp">
+
+                <TextView
+                    android:id="@+id/thickness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/thickness"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/thicknessLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="114dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/thickness"
+                    tools:layout_editor_absoluteX="16dp">
+
+                    <Button
+                        android:id="@+id/buttonFine"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#ffcba481"
+                        android:text="@string/fine"
+                        android:textColor="#ffffffff"
+                        android:textSize="24sp"
+                        android:typeface="sans" />
+
+                    <Button
+                        android:id="@+id/buttonMediumThickness"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#ffb79a82"
+                        android:text="@string/mediumThickness"
+                        android:textColor="#ffffffff"
+                        android:textSize="24sp" />
+
+                    <Button
+                        android:id="@+id/buttonCoarse"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#ffbfa896"
+                        android:text="@string/coarse"
+                        android:textColor="#ffffffff"
+                        android:textSize="24sp" />
+                </LinearLayout>
+            </android.support.constraint.ConstraintLayout>
+
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
-
-    <Switch
-        android:id="@+id/terms"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Terms"
-        app:layout_anchor="@+id/constraintLayout"
-        app:layout_anchorGravity="right|bottom" />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -1,5 +1,8 @@
 package com.example.vignesh.imageupload;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -24,9 +27,12 @@ public class FormScreen extends AppCompatActivity {
     Button buttonFine, buttonMediumThickness, buttonCoarse;
     Button button1a, button1b, button1c, button2a, button2b, button2c, button3a, button3b, button3c, button4a, button4b, button4c;
     LinearLayout lengthLayout, thicknessLayout, hairType1Layout, hairType2Layout, hairType3Layout, hairType4Layout;
-    ConstraintLayout constraintLayoutLength, constraintLayoutThickness;
+    ConstraintLayout constraintLayoutLength, constraintLayoutThickness, constraingLayoutHairType;
     Switch terms;
-    ArrayList<Button> lengthButtons, thicknessButtons, hairTypeButtons;
+    ArrayList<Button> fadedButtons, opaqueButtons;
+    HashMap<Button, Boolean> lengthButtons, thicknessButtons, hairTypeButtons;
+    ArrayList<HashMap<Button, Boolean>> allGroups;
+    HashMap<HashMap<Button, Boolean>, String> groups;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,33 +67,46 @@ public class FormScreen extends AppCompatActivity {
         hairType4Layout = (LinearLayout)findViewById(R.id.hairType4Layout);
         constraintLayoutLength = (ConstraintLayout)findViewById(R.id.constraintLayoutLength);
         constraintLayoutThickness = (ConstraintLayout)findViewById(R.id.constraintLayoutThickness);
+        constraingLayoutHairType = (ConstraintLayout)findViewById(R.id.constraintLayoutHairType);
 
         //Creates arraylist of length buttons
-        lengthButtons = new ArrayList<>();
-        lengthButtons.add(buttonShort);
-        lengthButtons.add(buttonMediumLength);
-        lengthButtons.add(buttonLong);
+        lengthButtons = new HashMap<>();
+        lengthButtons.put(buttonShort, Boolean.TRUE);
+        lengthButtons.put(buttonMediumLength, Boolean.TRUE);
+        lengthButtons.put(buttonLong, Boolean.TRUE);
 
         //Creates arraylist of thickness buttons
-        thicknessButtons = new ArrayList<>();
-        thicknessButtons.add(buttonFine);
-        thicknessButtons.add(buttonMediumThickness);
-        thicknessButtons.add(buttonCoarse);
+        thicknessButtons = new HashMap<>();
+        thicknessButtons.put(buttonFine, Boolean.TRUE);
+        thicknessButtons.put(buttonMediumThickness, Boolean.TRUE);
+        thicknessButtons.put(buttonCoarse, Boolean.TRUE);
 
         //Creates arraylist of hair type buttons
-        hairTypeButtons = new ArrayList<>();
-        hairTypeButtons.add(button1a);
-        hairTypeButtons.add(button1b);
-        hairTypeButtons.add(button1c);
-        hairTypeButtons.add(button2a);
-        hairTypeButtons.add(button2b);
-        hairTypeButtons.add(button2c);
-        hairTypeButtons.add(button3a);
-        hairTypeButtons.add(button3b);
-        hairTypeButtons.add(button3c);
-        hairTypeButtons.add(button4a);
-        hairTypeButtons.add(button4b);
-        hairTypeButtons.add(button4c);
+        hairTypeButtons = new HashMap<>();
+        hairTypeButtons.put(button1a, Boolean.TRUE);
+        hairTypeButtons.put(button1b, Boolean.TRUE);
+        hairTypeButtons.put(button1c, Boolean.TRUE);
+        hairTypeButtons.put(button2a, Boolean.TRUE);
+        hairTypeButtons.put(button2b, Boolean.TRUE);
+        hairTypeButtons.put(button2c, Boolean.TRUE);
+        hairTypeButtons.put(button3a, Boolean.TRUE);
+        hairTypeButtons.put(button3b, Boolean.TRUE);
+        hairTypeButtons.put(button3c, Boolean.TRUE);
+        hairTypeButtons.put(button4a, Boolean.TRUE);
+        hairTypeButtons.put(button4b, Boolean.TRUE);
+        hairTypeButtons.put(button4c, Boolean.TRUE);
+
+        //Creates arraylist of all groups
+        allGroups = new ArrayList<>();
+        allGroups.add(lengthButtons);
+        allGroups.add(thicknessButtons);
+        allGroups.add(hairTypeButtons);
+
+        //Creates map for groups
+        groups = new HashMap<>();
+        groups.put(lengthButtons, "length");
+        groups.put(thicknessButtons, "thickness");
+        groups.put(hairTypeButtons, "hair type");
 
         //Allow the buttons to be square
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -96,122 +115,112 @@ public class FormScreen extends AppCompatActivity {
 
         lengthLayout.getLayoutParams().height = screenWidth / 3;
         thicknessLayout.getLayoutParams().height = screenWidth / 3;
+        hairType1Layout.getLayoutParams().height = screenWidth / 3;
+        hairType2Layout.getLayoutParams().height = screenWidth / 3;
+        hairType3Layout.getLayoutParams().height = screenWidth / 3;
+        hairType4Layout.getLayoutParams().height = screenWidth / 3;
         constraintLayoutLength.getLayoutParams().height = screenWidth / 2;
         constraintLayoutThickness.getLayoutParams().height = screenWidth / 2;
+        constraingLayoutHairType.getLayoutParams().height = screenWidth * 3 / 2;
 
 
-        for (final Button button : lengthButtons) {
-            button.setOnClickListener(new View.OnClickListener() {
-                @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-                @Override
-                public void onClick(View v) {
-                    System.out.println();
-                    if (button.getBackground().getAlpha() == 0xff) {
-                        if (numberOfSelectedButtons(lengthButtons) > 1) {
-                            selectButtons(lengthButtons, button);
-                        } else if (numberOfSelectedButtons(lengthButtons) == 1) {
-                            resetButtons(lengthButtons);
+        for (final HashMap<Button, Boolean> group : allGroups) {
+            for (final Button button : group.keySet()) {
+                opaqueButtons.add(button);
+
+                button.setOnClickListener(new View.OnClickListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+                    @Override
+                    public void onClick(View v) {
+                        System.out.println();
+                        if (group.get(button)) {
+                            if (numberOfSelectedButtons(group) > 1) {
+                                selectButtons(group, button);
+                            } else if (numberOfSelectedButtons(group) == 1) {
+                                resetButtons(group);
+                            }
+                        } else {
+                            selectButtons(group, button);
                         }
-                    } else {
-                        selectButtons(lengthButtons, button);
+                        drawButtons(fadedButtons, opaqueButtons, group);
+                        printButtonStates();
+
+//                        System.out.println(button.getId());
                     }
-                    printButtonStates(lengthButtons);
-                    printButtonStates(thicknessButtons);
-                }
-            });
+                });
+            }
         }
 
-        for (final Button button : thicknessButtons) {
-            button.setOnClickListener(new View.OnClickListener() {
-                @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-                @Override
-                public void onClick(View v) {
-                    System.out.println();
-                    if (button.getBackground().getAlpha() == 0xff) {
-                        if (numberOfSelectedButtons(thicknessButtons) > 1) {
-                            selectButtons(thicknessButtons, button);
-                        } else if (numberOfSelectedButtons(thicknessButtons) == 1) {
-                            resetButtons(thicknessButtons);
-                        }
-                    } else {
-                        selectButtons(thicknessButtons, button);
-                    }
-                    printButtonStates(lengthButtons);
-                    printButtonStates(thicknessButtons);
-                }
-            });
-        }
-
-        for (final Button button : hairTypeButtons) {
-            button.setOnClickListener(new View.OnClickListener() {
-                @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-                @Override
-                public void onClick(View v) {
-                    System.out.println();
-                    if (button.getBackground().getAlpha() == 0xff) {
-                        if (numberOfSelectedButtons(hairTypeButtons) > 1) {
-                            selectButtons(hairTypeButtons, button);
-                        } else if (numberOfSelectedButtons(hairTypeButtons) == 1) {
-                            resetButtons(hairTypeButtons);
-                        }
-                    } else {
-                        selectButtons(hairTypeButtons, button);
-                    }
-                }
-            });
-        }
+        printButtonStates();
+        drawButtons(fadedButtons, opaqueButtons, null);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    void selectButtons(ArrayList<Button> group, Button target) {
-        for (Button button : group) {
+    void selectButtons(HashMap<Button, Boolean> group, Button target) {
+        System.out.println(groups.get(group));
+        for (Button button : group.keySet()) {
             System.out.println(button.getId());
-            if (button.getId() != target.getId()) {
-                if (button.getBackground().getAlpha() == 0xff) {
-                    System.out.println("hello" + button.getId());
-                    button.getBackground().setAlpha(0x80);
+            if (button != target) {
+                if (group.get(button)) {
+                    group.put(button, Boolean.FALSE);
                 }
-            } else if (button.getId() == target.getId()){
-                if (button.getBackground().getAlpha() < 0xff) {
+            } else {
+                if (!group.get(button)) {
                     AlphaAnimation alphaAnim = new AlphaAnimation(0.5f, 1.0f);
                     alphaAnim.setDuration (400);
                     button.startAnimation(alphaAnim);
-                    button.getBackground().setAlpha(0xff);
+                    group.remove(button);
+                    group.put(button, Boolean.TRUE);
                 }
             }
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    void resetButtons(ArrayList<Button> group) {
-        for (Button button : group) {
+    void resetButtons(HashMap<Button, Boolean> group) {
+        for (Button button : group.keySet()) {
             System.out.println(button.getId());
-            if (button.getBackground().getAlpha() < 0xff) {
+            if (!group.get(button)) {
                 AlphaAnimation alphaAnim = new AlphaAnimation(0.5f, 1.0f);
                 alphaAnim.setDuration (400);
                 button.startAnimation(alphaAnim);
                 button.getBackground().setAlpha(0xff);
+                group.put(button, Boolean.TRUE);
             }
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    void printButtonStates(ArrayList<Button> group) {
-        for (Button button : group) {
-            System.out.println(button.getId() + ": " + (button.getBackground().getAlpha() == 0xff));
+    void printButtonStates() {
+        for (HashMap<Button, Boolean> group: allGroups) {
+            for (Button button : group.keySet()) {
+                int color = Color.TRANSPARENT;
+                Drawable background = button.getBackground();
+                if (background instanceof ColorDrawable) {
+                    color = ((ColorDrawable) background).getColor();
+                }
+                System.out.println(button.getId() + " " + color + ": " + (group.get(button) ? "opaque" : "faded"));
+            }
+            System.out.println();
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    int numberOfSelectedButtons(ArrayList<Button> group) {
+    int numberOfSelectedButtons(HashMap<Button, Boolean> group) {
         int numSelectedButtons = 0;
 
-        for (Button button : group) {
-            if (button.getBackground().getAlpha() == 0xff) {
+        for (Button button : group.keySet()) {
+            if (group.get(button)) {
                 ++numSelectedButtons;
             }
         }
 
         return numSelectedButtons;
+    }
+
+    void drawButtons(ArrayList<Button> faded, ArrayList<Button> opaque, HashMap<Button, Boolean> group) {
+        for (Button button : faded) {
+            button.getBackground().setAlpha(0x80);
+        }
+
+        for (Button button : opaque) {
+            button.getBackground().setAlpha(0xff);
+        }
     }
 }

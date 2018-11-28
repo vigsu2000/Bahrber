@@ -33,8 +33,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutThickness"
-                tools:layout_editor_absoluteX="0dp">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutThickness">
 
                 <TextView
                     android:id="@+id/hairType"
@@ -50,14 +51,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="610dp"
                     android:layout_marginTop="16dp"
-                    app:layout_constraintTop_toBottomOf="@+id/hairType"
-                    tools:layout_editor_absoluteX="0dp">
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hairType">
 
                     <LinearLayout
                         android:id="@+id/hairType1Layout"
                         android:layout_width="match_parent"
                         android:layout_height="114dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
 
                         <Button
                             android:id="@+id/button1a"
@@ -99,8 +103,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="114dp"
                         android:orientation="horizontal"
-                        app:layout_constraintTop_toBottomOf="@+id/hairType1Layout"
-                        tools:layout_editor_absoluteX="0dp">
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/hairType1Layout">
 
                         <Button
                             android:id="@+id/button2a"
@@ -142,6 +147,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="114dp"
                         android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/hairType2Layout">
 
                         <Button
@@ -184,8 +191,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="114dp"
                         android:orientation="horizontal"
-                        app:layout_constraintTop_toBottomOf="@+id/hairType3Layout"
-                        tools:layout_editor_absoluteX="0dp">
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/hairType3Layout">
 
                         <Button
                             android:id="@+id/button4a"
@@ -298,8 +306,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="231dp"
                 android:layout_marginTop="29dp"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutLength"
-                tools:layout_editor_absoluteX="0dp">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayoutLength">
 
                 <TextView
                     android:id="@+id/thickness"
@@ -317,8 +326,9 @@
                     android:layout_height="114dp"
                     android:layout_marginTop="16dp"
                     android:orientation="horizontal"
-                    app:layout_constraintTop_toBottomOf="@+id/thickness"
-                    tools:layout_editor_absoluteX="16dp">
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/thickness">
 
                     <Button
                         android:id="@+id/buttonFine"

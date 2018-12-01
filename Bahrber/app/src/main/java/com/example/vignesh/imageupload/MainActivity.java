@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         Button nextPage = (Button) findViewById(R.id.next_page);
         nextPage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, WelcomeScreen.class);
+                Intent intent = new Intent(MainActivity.this, FormScreen.class);
                 startActivity(intent);
             }
         });

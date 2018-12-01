@@ -171,7 +171,6 @@ public class FormScreen extends AppCompatActivity {
                     AlphaAnimation alphaAnim = new AlphaAnimation(0.5f, 1.0f);
                     alphaAnim.setDuration (400);
                     button.startAnimation(alphaAnim);
-                    group.remove(button);
                     group.put(button, Boolean.TRUE);
                 }
             }
@@ -185,7 +184,6 @@ public class FormScreen extends AppCompatActivity {
                 AlphaAnimation alphaAnim = new AlphaAnimation(0.5f, 1.0f);
                 alphaAnim.setDuration (400);
                 button.startAnimation(alphaAnim);
-//                group.remove(button);
                 group.put(button, Boolean.TRUE);
             }
         }
@@ -201,6 +199,7 @@ public class FormScreen extends AppCompatActivity {
                 }
                 System.out.println(button.getId() + " " + color + ": " + (group.get(button) ? "opaque" : "faded"));
             }
+            System.out.println();
             System.out.println();
         }
     }

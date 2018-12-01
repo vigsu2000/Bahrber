@@ -29,7 +29,6 @@ public class FormScreen extends AppCompatActivity {
     Button submit;
     LinearLayout lengthLayout, thicknessLayout, hairType1Layout, hairType2Layout, hairType3Layout, hairType4Layout;
     ConstraintLayout constraintLayoutLength, constraintLayoutThickness, constraingLayoutHairType;
-    Switch terms;
     HashMap<Button, Boolean> lengthButtons, thicknessButtons, hairTypeButtons;
     ArrayList<HashMap<Button, Boolean>> allGroups;
     HashMap<HashMap<Button, Boolean>, String> groups;
@@ -68,7 +67,6 @@ public class FormScreen extends AppCompatActivity {
         constraintLayoutLength = (ConstraintLayout)findViewById(R.id.constraintLayoutLength);
         constraintLayoutThickness = (ConstraintLayout)findViewById(R.id.constraintLayoutThickness);
         constraingLayoutHairType = (ConstraintLayout)findViewById(R.id.constraintLayoutHairType);
-        terms = (Switch)findViewById(R.id.terms);
         submit = (Button)findViewById(R.id.submit);
 
         //Creates map of length buttons
@@ -148,19 +146,6 @@ public class FormScreen extends AppCompatActivity {
             }
         }
 
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (numberOfSelectedButtons(lengthButtons) == 1 &&
-                        numberOfSelectedButtons(thicknessButtons) == 1 &&
-                        numberOfSelectedButtons(hairTypeButtons) == 1) {
-                    submit.setEnabled(true);
-                } else {
-                    submit.setEnabled(false);
-                }
-            }
-        });
-
         printButtonStates();
         drawButtons();
     }
@@ -234,12 +219,12 @@ public class FormScreen extends AppCompatActivity {
             }
         }
 
-//        for (Button button : faded) {
-//            button.getBackground().setAlpha(0x80);
-//        }
-//
-//        for (Button button : opaque) {
-//            button.getBackground().setAlpha(0xff);
-//        }
+        if (numberOfSelectedButtons(lengthButtons) == 1 &&
+                numberOfSelectedButtons(thicknessButtons) == 1 &&
+                numberOfSelectedButtons(hairTypeButtons) == 1) {
+            submit.setEnabled(true);
+        } else {
+            submit.setEnabled(false);
+        }
     }
 }

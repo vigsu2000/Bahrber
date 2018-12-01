@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.graphics.ColorUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -32,6 +33,10 @@ public class FormScreen extends AppCompatActivity {
     HashMap<Button, Boolean> lengthButtons, thicknessButtons, hairTypeButtons;
     ArrayList<HashMap<Button, Boolean>> allGroups;
     HashMap<HashMap<Button, Boolean>, String> groups;
+
+    final int FADED_COLOR = 0x80;
+    final int OPAQUE_COLOR = 0xff;
+    final int ANIMATION_DURATION = 400;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,12 +118,12 @@ public class FormScreen extends AppCompatActivity {
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int screenWidth = displayMetrics.widthPixels;
 
-        lengthLayout.getLayoutParams().height = screenWidth / 3;
-        thicknessLayout.getLayoutParams().height = screenWidth / 3;
-        hairType1Layout.getLayoutParams().height = screenWidth / 3;
-        hairType2Layout.getLayoutParams().height = screenWidth / 3;
-        hairType3Layout.getLayoutParams().height = screenWidth / 3;
-        hairType4Layout.getLayoutParams().height = screenWidth / 3;
+        lengthLayout.getLayoutParams().height = screenWidth / lengthButtons.size();
+        thicknessLayout.getLayoutParams().height = screenWidth / thicknessButtons.size();
+        hairType1Layout.getLayoutParams().height = screenWidth / (hairTypeButtons.size() / 4);
+        hairType2Layout.getLayoutParams().height = screenWidth / (hairTypeButtons.size() / 4);
+        hairType3Layout.getLayoutParams().height = screenWidth / (hairTypeButtons.size() / 4);
+        hairType4Layout.getLayoutParams().height = screenWidth / (hairTypeButtons.size() / 4);
         constraintLayoutLength.getLayoutParams().height = screenWidth / 2;
         constraintLayoutThickness.getLayoutParams().height = screenWidth / 2;
         constraingLayoutHairType.getLayoutParams().height = screenWidth * 3 / 2;
@@ -140,7 +145,7 @@ public class FormScreen extends AppCompatActivity {
                         }
 
                         drawButtons();
-                        printButtonStates();
+//                        printButtonStates();
                         }
                 });
             }
@@ -157,11 +162,12 @@ public class FormScreen extends AppCompatActivity {
             if (button != target) {
                 if (group.get(button)) {
                     group.put(button, Boolean.FALSE);
+                    button.getBackground().setAlpha(FADED_COLOR);
                 }
             } else {
                 if (!group.get(button)) {
                     AlphaAnimation alphaAnim = new AlphaAnimation(0.5f, 1.0f);
-                    alphaAnim.setDuration (400);
+                    alphaAnim.setDuration (ANIMATION_DURATION);
                     button.startAnimation(alphaAnim);
                     group.put(button, Boolean.TRUE);
                 }
@@ -174,7 +180,7 @@ public class FormScreen extends AppCompatActivity {
             System.out.println(button.getId());
             if (!group.get(button)) {
                 AlphaAnimation alphaAnim = new AlphaAnimation(0.5f, 1.0f);
-                alphaAnim.setDuration (400);
+                alphaAnim.setDuration (ANIMATION_DURATION);
                 button.startAnimation(alphaAnim);
                 group.put(button, Boolean.TRUE);
             }
@@ -211,11 +217,18 @@ public class FormScreen extends AppCompatActivity {
     void drawButtons() {
         for (HashMap<Button, Boolean> group: allGroups) {
             for (Button button : group.keySet()) {
+                ColorDrawable buttonColor = (ColorDrawable) button.getBackground();
+                int colorId = buttonColor.getColor();
+
                 if (group.get(button)) {
-                    button.getBackground().setAlpha(0xff);
+                    System.out.println(colorId);
+                    ColorUtils.setAlphaComponent(colorId, OPAQUE_COLOR);
+                    System.out.println(colorId);
                 } else {
-                    button.getBackground().setAlpha(0x80);
+                    ColorUtils.setAlphaComponent(colorId, FADED_COLOR);
                 }
+
+                button.setBackgroundColor(colorId);
             }
         }
 

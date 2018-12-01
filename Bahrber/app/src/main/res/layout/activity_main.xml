@@ -21,7 +21,8 @@
     <ImageView
         android:id="@+id/imgView"
         android:layout_width="match_parent"
-        android:layout_height="300dp" />
+        android:layout_height="300dp"
+        android:contentDescription="@string/user_upload_description" />
 
     <Button
         android:id="@+id/next_page"

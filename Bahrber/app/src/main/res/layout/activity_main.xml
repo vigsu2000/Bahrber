@@ -7,10 +7,10 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/chooseImg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Choose Image" />
+        android:text="Choose Image"
+        android:id="@+id/chooseImg"/>
 
     <Button
         android:layout_width="match_parent"
@@ -18,16 +18,25 @@
         android:text="Upload Image"
         android:id="@+id/uploadImg"/>
 
-    <ImageView
-        android:id="@+id/imgView"
-        android:layout_width="match_parent"
-        android:layout_height="300dp" />
-
     <Button
-        android:id="@+id/next_page"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:text="Next" />
+        android:text="Retrieve Image 1"
+        android:id="@+id/retrieveImg1"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retrieve Image 2"
+        android:id="@+id/retrieveImg2"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/imgView1"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/imgView2"/>
 </LinearLayout>

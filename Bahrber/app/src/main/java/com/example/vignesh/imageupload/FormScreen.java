@@ -26,10 +26,10 @@ public class FormScreen extends AppCompatActivity {
     Button buttonShort, buttonMediumLength, buttonLong;
     Button buttonFine, buttonMediumThickness, buttonCoarse;
     Button button1a, button1b, button1c, button2a, button2b, button2c, button3a, button3b, button3c, button4a, button4b, button4c;
+    Button submit;
     LinearLayout lengthLayout, thicknessLayout, hairType1Layout, hairType2Layout, hairType3Layout, hairType4Layout;
     ConstraintLayout constraintLayoutLength, constraintLayoutThickness, constraingLayoutHairType;
     Switch terms;
-    ArrayList<Button> fadedButtons, opaqueButtons;
     HashMap<Button, Boolean> lengthButtons, thicknessButtons, hairTypeButtons;
     ArrayList<HashMap<Button, Boolean>> allGroups;
     HashMap<HashMap<Button, Boolean>, String> groups;
@@ -68,6 +68,8 @@ public class FormScreen extends AppCompatActivity {
         constraintLayoutLength = (ConstraintLayout)findViewById(R.id.constraintLayoutLength);
         constraintLayoutThickness = (ConstraintLayout)findViewById(R.id.constraintLayoutThickness);
         constraingLayoutHairType = (ConstraintLayout)findViewById(R.id.constraintLayoutHairType);
+        terms = (Switch)findViewById(R.id.terms);
+        submit = (Button)findViewById(R.id.submit);
 
         //Creates map of length buttons
         lengthButtons = new HashMap<>();
@@ -95,10 +97,6 @@ public class FormScreen extends AppCompatActivity {
         hairTypeButtons.put(button4a, Boolean.TRUE);
         hairTypeButtons.put(button4b, Boolean.TRUE);
         hairTypeButtons.put(button4c, Boolean.TRUE);
-
-        //Instantiates arralist for faded and opaque buttons
-        fadedButtons = new ArrayList<>();
-        opaqueButtons = new ArrayList<>();
 
         //Creates arraylist of all groups
         allGroups = new ArrayList<>();
@@ -130,8 +128,6 @@ public class FormScreen extends AppCompatActivity {
 
         for (final HashMap<Button, Boolean> group : allGroups) {
             for (final Button button : group.keySet()) {
-//                opaqueButtons.add(button);
-
                 button.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         System.out.println();
@@ -147,12 +143,23 @@ public class FormScreen extends AppCompatActivity {
 
                         drawButtons();
                         printButtonStates();
-
-//                        System.out.println(button.getId());
-                    }
+                        }
                 });
             }
         }
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (numberOfSelectedButtons(lengthButtons) == 1 &&
+                        numberOfSelectedButtons(thicknessButtons) == 1 &&
+                        numberOfSelectedButtons(hairTypeButtons) == 1) {
+                    submit.setEnabled(true);
+                } else {
+                    submit.setEnabled(false);
+                }
+            }
+        });
 
         printButtonStates();
         drawButtons();

@@ -69,19 +69,19 @@ public class FormScreen extends AppCompatActivity {
         constraintLayoutThickness = (ConstraintLayout)findViewById(R.id.constraintLayoutThickness);
         constraingLayoutHairType = (ConstraintLayout)findViewById(R.id.constraintLayoutHairType);
 
-        //Creates arraylist of length buttons
+        //Creates map of length buttons
         lengthButtons = new HashMap<>();
         lengthButtons.put(buttonShort, Boolean.TRUE);
         lengthButtons.put(buttonMediumLength, Boolean.TRUE);
         lengthButtons.put(buttonLong, Boolean.TRUE);
 
-        //Creates arraylist of thickness buttons
+        //Creates map of thickness buttons
         thicknessButtons = new HashMap<>();
         thicknessButtons.put(buttonFine, Boolean.TRUE);
         thicknessButtons.put(buttonMediumThickness, Boolean.TRUE);
         thicknessButtons.put(buttonCoarse, Boolean.TRUE);
 
-        //Creates arraylist of hair type buttons
+        //Creates map of hair type buttons
         hairTypeButtons = new HashMap<>();
         hairTypeButtons.put(button1a, Boolean.TRUE);
         hairTypeButtons.put(button1b, Boolean.TRUE);
@@ -95,6 +95,10 @@ public class FormScreen extends AppCompatActivity {
         hairTypeButtons.put(button4a, Boolean.TRUE);
         hairTypeButtons.put(button4b, Boolean.TRUE);
         hairTypeButtons.put(button4c, Boolean.TRUE);
+
+        //Instantiates arralist for faded and opaque buttons
+        fadedButtons = new ArrayList<>();
+        opaqueButtons = new ArrayList<>();
 
         //Creates arraylist of all groups
         allGroups = new ArrayList<>();
@@ -126,11 +130,9 @@ public class FormScreen extends AppCompatActivity {
 
         for (final HashMap<Button, Boolean> group : allGroups) {
             for (final Button button : group.keySet()) {
-                opaqueButtons.add(button);
+//                opaqueButtons.add(button);
 
                 button.setOnClickListener(new View.OnClickListener() {
-                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-                    @Override
                     public void onClick(View v) {
                         System.out.println();
                         if (group.get(button)) {
@@ -142,7 +144,8 @@ public class FormScreen extends AppCompatActivity {
                         } else {
                             selectButtons(group, button);
                         }
-                        drawButtons(fadedButtons, opaqueButtons, group);
+
+                        drawButtons();
                         printButtonStates();
 
 //                        System.out.println(button.getId());
@@ -152,7 +155,7 @@ public class FormScreen extends AppCompatActivity {
         }
 
         printButtonStates();
-        drawButtons(fadedButtons, opaqueButtons, null);
+        drawButtons();
     }
 
     void selectButtons(HashMap<Button, Boolean> group, Button target) {
@@ -182,7 +185,7 @@ public class FormScreen extends AppCompatActivity {
                 AlphaAnimation alphaAnim = new AlphaAnimation(0.5f, 1.0f);
                 alphaAnim.setDuration (400);
                 button.startAnimation(alphaAnim);
-                button.getBackground().setAlpha(0xff);
+//                group.remove(button);
                 group.put(button, Boolean.TRUE);
             }
         }
@@ -214,13 +217,23 @@ public class FormScreen extends AppCompatActivity {
         return numSelectedButtons;
     }
 
-    void drawButtons(ArrayList<Button> faded, ArrayList<Button> opaque, HashMap<Button, Boolean> group) {
-        for (Button button : faded) {
-            button.getBackground().setAlpha(0x80);
+    void drawButtons() {
+        for (HashMap<Button, Boolean> group: allGroups) {
+            for (Button button : group.keySet()) {
+                if (group.get(button)) {
+                    button.getBackground().setAlpha(0xff);
+                } else {
+                    button.getBackground().setAlpha(0x80);
+                }
+            }
         }
 
-        for (Button button : opaque) {
-            button.getBackground().setAlpha(0xff);
-        }
+//        for (Button button : faded) {
+//            button.getBackground().setAlpha(0x80);
+//        }
+//
+//        for (Button button : opaque) {
+//            button.getBackground().setAlpha(0xff);
+//        }
     }
 }

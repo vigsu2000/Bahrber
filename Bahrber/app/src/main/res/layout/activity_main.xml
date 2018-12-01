@@ -31,12 +31,18 @@
         android:id="@+id/retrieveImg2"/>
 
     <ImageView
+        android:id="@+id/imgView1"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:id="@+id/imgView1"/>
+        android:layout_height="129dp" />
 
     <ImageView
+        android:id="@+id/imgView2"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:id="@+id/imgView2"/>
+        android:layout_height="122dp" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 </LinearLayout>

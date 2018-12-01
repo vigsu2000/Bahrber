@@ -21,6 +21,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.text.Normalizer;
+
 public class MainActivity extends AppCompatActivity {
     Button chooseImg, uploadImg, retrieveImg1, retrieveImg2;
     ImageView imgView1, imgView2;
@@ -103,6 +105,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String url2 = "https://firebasestorage.googleapis.com/v0/b/imageupload-ebbed.appspot.com/o/Long%20Hair%2F1B%2F40d36d5ba3673e20a9d2951bfbc10301.jpg?alt=media&token=5101588a-192b-413b-b6c2-417b4d631805";
                 Glide.with(getApplicationContext()).load(url2).into(imgView2);
+            }
+        });
+
+        Button nextPage = (Button) findViewById(R.id.next);
+        nextPage.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, FormScreen.class);
+                startActivity(intent);
             }
         });
     }

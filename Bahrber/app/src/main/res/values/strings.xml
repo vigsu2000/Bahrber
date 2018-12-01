@@ -31,5 +31,6 @@
     <string name="_1a">1a</string>
     <string name="submit">Submit</string>
     <string name="begin">Begin</string>
-    <string name="name">Bahrber</string>
+    <string name="next">Next</string>
+    <string name="title_activity_result">Result</string>
 </resources>

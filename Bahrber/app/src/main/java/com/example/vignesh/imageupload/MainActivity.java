@@ -8,6 +8,7 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -21,10 +22,10 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.text.Normalizer;
-
 public class MainActivity extends AppCompatActivity {
-    Button chooseImg, uploadImg, retrieveImg1, retrieveImg2;
+    private static final String TAG = "Bahrber:Main";
+
+    Button chooseImg, uploadImg, retrieveImg1, retrieveImg2, nextPage;
     ImageView imgView1, imgView2;
     int PICK_IMAGE_REQUEST = 111;
     Uri filePath;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         retrieveImg2 = (Button) findViewById(R.id.retrieveImg2);
         imgView1 = (ImageView)findViewById(R.id.imgView1);
         imgView2 = (ImageView) findViewById(R.id.imgView2);
+        nextPage = (Button) findViewById(R.id.next);
 
         pd = new ProgressDialog(this);
         pd.setMessage("Uploading....");
@@ -108,9 +110,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button nextPage = (Button) findViewById(R.id.next);
         nextPage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                Log.d(TAG, "Next button clicked");
                 Intent intent = new Intent(MainActivity.this, FormScreen.class);
                 startActivity(intent);
             }

@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#ffb79a82</color>
     <color name="colorAccent">#ffbfa896</color>
     <color name="formTextColor">#ffffffff</color>
+    <color name="background_color">#e8dace</color>
 </resources>

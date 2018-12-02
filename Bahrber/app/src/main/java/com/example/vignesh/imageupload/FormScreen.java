@@ -4,25 +4,23 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.graphics.ColorUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Switch;
 import android.widget.TextView;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class FormScreen extends AppCompatActivity {
+    private static final String TAG = "Bahrber:Form";
 
     TextView formTitle, length;
     Button buttonShort, buttonMediumLength, buttonLong;
@@ -154,6 +152,7 @@ public class FormScreen extends AppCompatActivity {
 
         submit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                Log.d(TAG, "Submit button clicked");
                 Intent intent = new Intent(FormScreen.this, Result.class);
                 startActivity(intent);
             }

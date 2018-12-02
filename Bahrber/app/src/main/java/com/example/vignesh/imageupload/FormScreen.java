@@ -1,5 +1,6 @@
 package com.example.vignesh.imageupload;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -150,6 +151,13 @@ public class FormScreen extends AppCompatActivity {
                 });
             }
         }
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(FormScreen.this, Result.class);
+                startActivity(intent);
+            }
+        });
 
         printButtonStates();
         drawButtons();

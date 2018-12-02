@@ -23,7 +23,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="24dp"
                 android:text="@string/submit"
-                android:textSize="18sp"
+                android:textSize="@dimen/button_text_size"
                 android:typeface="sans"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/hair_type"
-                    android:textSize="18sp"
+                    android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
@@ -85,33 +85,36 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="#ffcba481"
+                            android:background="@color/colorPrimary"
                             android:text="@string/_1a"
-                            android:textColor="#ffffffff"
+                            android:textColor="@color/formTextColor"
                             android:textSize="30sp"
-                            android:typeface="sans" />
+                            android:typeface="sans"
+                            style="?android:attr/borderlessButtonStyle" />
 
                         <Button
                             android:id="@+id/button1b"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="#ffb79a82"
+                            android:background="@color/colorPrimaryDark"
                             android:text="@string/_1b"
-                            android:textColor="#ffffffff"
+                            android:textColor="@color/formTextColor"
                             android:textSize="30sp"
-                            android:typeface="sans" />
+                            android:typeface="sans"
+                            style="?android:attr/borderlessButtonStyle" />
 
                         <Button
                             android:id="@+id/button1c"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="#ffbfa896"
+                            android:background="@color/colorAccent"
                             android:text="@string/_1c"
-                            android:textColor="#ffffffff"
+                            android:textColor="@color/formTextColor"
                             android:textSize="30sp"
-                            android:typeface="sans" />
+                            android:typeface="sans"
+                            style="?android:attr/borderlessButtonStyle" />
 
                     </LinearLayout>
 
@@ -129,33 +132,36 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="#ffbfa896"
+                            android:background="@color/colorAccent"
                             android:text="@string/_2a"
-                            android:textColor="#ffffffff"
+                            android:textColor="@color/formTextColor"
                             android:textSize="30sp"
-                            android:typeface="sans" />
+                            android:typeface="sans"
+                            style="?android:attr/borderlessButtonStyle" />
 
                         <Button
                             android:id="@+id/button2b"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="#ffcba481"
+                            android:background="@color/colorPrimary"
                             android:text="@string/_2b"
-                            android:textColor="#ffffffff"
+                            android:textColor="@color/formTextColor"
                             android:textSize="30sp"
-                            android:typeface="sans" />
+                            android:typeface="sans"
+                            style="?android:attr/borderlessButtonStyle" />
 
                         <Button
                             android:id="@+id/button2c"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="#ffb79a82"
+                            android:background="@color/colorPrimaryDark"
                             android:text="@string/_2c"
-                            android:textColor="#ffffffff"
+                            android:textColor="@color/formTextColor"
                             android:textSize="30sp"
-                            android:typeface="sans" />
+                            android:typeface="sans"
+                            style="?android:attr/borderlessButtonStyle" />
 
                     </LinearLayout>
 
@@ -173,33 +179,36 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="#ffb79a82"
+                            android:background="@color/colorPrimaryDark"
                             android:text="@string/_3a"
-                            android:textColor="#ffffffff"
+                            android:textColor="@color/formTextColor"
                             android:textSize="30sp"
-                            android:typeface="sans" />
+                            android:typeface="sans"
+                            style="?android:attr/borderlessButtonStyle" />
 
                         <Button
                             android:id="@+id/button3b"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="#ffbfa896"
+                            android:background="@color/colorAccent"
                             android:text="@string/_3b"
-                            android:textColor="#ffffffff"
+                            android:textColor="@color/formTextColor"
                             android:textSize="30sp"
-                            android:typeface="sans" />
+                            android:typeface="sans"
+                            style="?android:attr/borderlessButtonStyle" />
 
                         <Button
                             android:id="@+id/button3c"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="#ffcba481"
+                            android:background="@color/colorPrimary"
                             android:text="@string/_3c"
-                            android:textColor="#ffffffff"
+                            android:textColor="@color/formTextColor"
                             android:textSize="30sp"
-                            android:typeface="sans" />
+                            android:typeface="sans"
+                            style="?android:attr/borderlessButtonStyle" />
 
                     </LinearLayout>
 
@@ -217,33 +226,36 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="#ffcba481"
+                            android:background="@color/colorPrimary"
                             android:text="@string/_4a"
-                            android:textColor="#ffffffff"
+                            android:textColor="@color/formTextColor"
                             android:textSize="30sp"
-                            android:typeface="sans" />
+                            android:typeface="sans"
+                            style="?android:attr/borderlessButtonStyle" />
 
                         <Button
                             android:id="@+id/button4b"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="#ffb79a82"
+                            android:background="@color/colorPrimaryDark"
                             android:text="@string/_4b"
-                            android:textColor="#ffffffff"
+                            android:textColor="@color/formTextColor"
                             android:textSize="30sp"
-                            android:typeface="sans" />
+                            android:typeface="sans"
+                            style="?android:attr/borderlessButtonStyle" />
 
                         <Button
                             android:id="@+id/button4c"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="#ffbfa896"
+                            android:background="@color/colorAccent"
                             android:text="@string/_4c"
-                            android:textColor="#ffffffff"
+                            android:textColor="@color/formTextColor"
                             android:textSize="30sp"
-                            android:typeface="sans" />
+                            android:typeface="sans"
+                            style="?android:attr/borderlessButtonStyle" />
 
                     </LinearLayout>
 
@@ -266,7 +278,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/desired_length"
-                    android:textSize="18sp"
+                    android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.501"
                     app:layout_constraintStart_toStartOf="parent"
@@ -287,33 +299,36 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="#ffcba481"
+                        android:background="@color/colorPrimary"
                         android:text="@string/shortLength"
-                        android:textColor="#ffffffff"
+                        android:textColor="@color/formTextColor"
                         android:textSize="24sp"
-                        android:typeface="sans" />
+                        android:typeface="sans"
+                        style="?android:attr/borderlessButtonStyle" />
 
                     <Button
                         android:id="@+id/buttonMediumLength"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="#ffb79a82"
+                        android:background="@color/colorPrimaryDark"
                         android:text="@string/mediumLength"
-                        android:textColor="#ffffffff"
+                        android:textColor="@color/formTextColor"
                         android:textSize="24sp"
-                        android:typeface="sans" />
+                        android:typeface="sans"
+                        style="?android:attr/borderlessButtonStyle" />
 
                     <Button
                         android:id="@+id/buttonLong"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="#ffbfa896"
+                        android:background="@color/colorAccent"
                         android:text="@string/longLength"
-                        android:textColor="#ffffffff"
+                        android:textColor="@color/formTextColor"
                         android:textSize="24sp"
-                        android:typeface="sans" />
+                        android:typeface="sans"
+                        style="?android:attr/borderlessButtonStyle" />
 
                 </LinearLayout>
 
@@ -333,7 +348,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/thickness"
-                    android:textSize="18sp"
+                    android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -346,40 +361,44 @@
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/thickness">
+                    app:layout_constraintTop_toBottomOf="@+id/thickness"
+                    >
 
                     <Button
                         android:id="@+id/buttonFine"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="#ffcba481"
+                        android:background="@color/colorPrimary"
                         android:text="@string/fine"
-                        android:textColor="#ffffffff"
+                        android:textColor="@color/formTextColor"
                         android:textSize="24sp"
-                        android:typeface="sans" />
+                        android:typeface="sans"
+                        style="?android:attr/borderlessButtonStyle" />
 
                     <Button
                         android:id="@+id/buttonMediumThickness"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="#ffb79a82"
+                        android:background="@color/colorPrimaryDark"
                         android:text="@string/mediumThickness"
-                        android:textColor="#ffffffff"
+                        android:textColor="@color/formTextColor"
                         android:textSize="24sp"
-                        android:typeface="sans" />
+                        android:typeface="sans"
+                        style="?android:attr/borderlessButtonStyle"/>
 
                     <Button
                         android:id="@+id/buttonCoarse"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="#ffbfa896"
+                        android:background="@color/colorAccent"
                         android:text="@string/coarse"
-                        android:textColor="#ffffffff"
+                        android:textColor="@color/formTextColor"
                         android:textSize="24sp"
-                        android:typeface="sans" />
+                        android:typeface="sans"
+                        style="?android:attr/borderlessButtonStyle"/>
                 </LinearLayout>
             </android.support.constraint.ConstraintLayout>
 

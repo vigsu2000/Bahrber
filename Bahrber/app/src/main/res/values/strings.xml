@@ -1,6 +1,7 @@
 <resources>
-    <!--Name-->
+    <!--Name and catch phrase-->
     <string name="app_name">Bahrber</string>
+    <string name="catch_phrase">Find your style</string>
 
     <!--Activities-->
     <string name="title_activity_form_screen">FormScreen</string>

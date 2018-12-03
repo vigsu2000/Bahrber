@@ -11,45 +11,45 @@
         android:layout_height="wrap_content"
         android:text="Choose Image"
         android:id="@+id/chooseImg"
-        android:textSize="@dimen/button_text_size" />
+        android:textSize="@dimen/small" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Upload Image"
         android:id="@+id/uploadImg"
-        android:textSize="@dimen/button_text_size" />
+        android:textSize="@dimen/small" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Retrieve Image 1"
         android:id="@+id/retrieveImg1"
-        android:textSize="@dimen/button_text_size" />
+        android:textSize="@dimen/small" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Retrieve Image 2"
         android:id="@+id/retrieveImg2"
-        android:textSize="@dimen/button_text_size" />
+        android:textSize="@dimen/small" />
 
     <ImageView
         android:id="@+id/imgView1"
         android:layout_width="match_parent"
         android:layout_height="129dp"
-        android:textSize="@dimen/button_text_size" />
+        android:textSize="@dimen/small" />
 
     <ImageView
         android:id="@+id/imgView2"
         android:layout_width="match_parent"
         android:layout_height="122dp"
-        android:textSize="@dimen/button_text_size" />
+        android:textSize="@dimen/small" />
 
     <Button
         android:id="@+id/next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/next"
-        android:textSize="@dimen/button_text_size" />
+        android:textSize="@dimen/small" />
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.example.vignesh.imageupload;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     Uri filePath;
     ProgressDialog pd;
     DatabaseReference databaseReference;
+    boolean gaveImage = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +47,15 @@ public class MainActivity extends AppCompatActivity {
         imgView2 = (ImageView) findViewById(R.id.imgView2);
         nextPage = (Button) findViewById(R.id.next);
 
+        nextPage.getBackground().setAlpha(128);
+        nextPage.setTextColor(Color.parseColor("#80000000"));
+
         pd = new ProgressDialog(this);
         pd.setMessage("Uploading....");
 
         //creating reference to firebase storage
         FirebaseStorage storage = FirebaseStorage.getInstance();
         final StorageReference storageRef = FirebaseStorage.getInstance().getReference();
-
 
         chooseImg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_PICK);
                 startActivityForResult(Intent.createChooser(intent, "Select Image"), PICK_IMAGE_REQUEST);
+                nextPage.getBackground().setAlpha(255);
+                nextPage.setTextColor(Color.parseColor("#FF000000"));
+                gaveImage = true;
             }
         });
 
@@ -113,8 +120,10 @@ public class MainActivity extends AppCompatActivity {
         nextPage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Log.d(TAG, "Next button clicked");
-                Intent intent = new Intent(MainActivity.this, FormScreen.class);
-                startActivity(intent);
+                if (gaveImage) {
+                    Intent intent = new Intent(MainActivity.this, Result.class);
+                    startActivity(intent);
+                }
             }
         });
     }

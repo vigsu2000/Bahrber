@@ -5,4 +5,5 @@
     <color name="colorAccent">#ffbfa896</color>
     <color name="formTextColor">#ffffffff</color>
     <color name="background_color">#e8dace</color>
+    <color name="greyedOut">#80ffffff</color>
 </resources>

@@ -8,10 +8,10 @@
 
     <Button
         android:id="@+id/toMain"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/begin"
-        android:textSize="@dimen/button_text_size"
+        android:textSize="@dimen/small"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -56,5 +56,5 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311" />
+        app:layout_constraintVertical_bias="0.231" />
 </android.support.constraint.ConstraintLayout>

@@ -20,7 +20,7 @@
         android:text="Upload Image"
         android:id="@+id/uploadImg"
         android:textSize="@dimen/small" />
-
+    <!
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

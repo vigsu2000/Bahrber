@@ -13,6 +13,7 @@
     <string name="title_activity_result">Result</string>
 
     <!--Form-->
+    <string name="directions">Please input your desired haircut length, current hair thickness, and current hair type. MAKE SURE TO EVENTUALLY EXPLAIN HAIRTYPE</string>
     <string name="thickness">Thickness</string>
     <string name="desired_length">Desired Length</string>
     <string name="shortLength">Short</string>
@@ -36,7 +37,7 @@
     <string name="_1c">1c</string>
     <string name="_1b">1b</string>
     <string name="_1a">1a</string>
-
+    
     <!--Buttons-->
     <string name="submit">Submit</string>
     <string name="begin">Begin</string>

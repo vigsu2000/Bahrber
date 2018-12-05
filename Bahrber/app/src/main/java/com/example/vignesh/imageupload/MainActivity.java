@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
         chooseImg = (Button)findViewById(R.id.chooseImg);
         uploadImg = (Button)findViewById(R.id.uploadImg);
-        retrieveImg1 = (Button)findViewById(R.id.retrieveImg1);
-        retrieveImg2 = (Button) findViewById(R.id.retrieveImg2);
+        //retrieveImg1 = (Button)findViewById(R.id.retrieveImg1);
+        //retrieveImg2 = (Button) findViewById(R.id.retrieveImg2);
         imgView1 = (ImageView)findViewById(R.id.imgView1);
-        imgView2 = (ImageView) findViewById(R.id.imgView2);
+        //imgView2 = (ImageView) findViewById(R.id.imgView2);
         nextPage = (Button) findViewById(R.id.next);
 
         nextPage.getBackground().setAlpha(128);
@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         chooseImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d(TAG, "Choose image button clicked");
                 Intent intent = new Intent();
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_PICK);
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         uploadImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d(TAG, "Upload button clicked");
                 if(filePath != null) {
                     pd.show();
 
@@ -102,6 +104,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        Old retrieve image listeners
         retrieveImg1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 Glide.with(getApplicationContext()).load(url2).into(imgView2);
             }
         });
+        */
 
         nextPage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -142,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //Setting image to ImageView
                 imgView1.setImageBitmap(bitmap);
-                imgView2.setImageBitmap(bitmap);
+                //imgView2.setImageBitmap(bitmap);
             } catch (Exception e) {
                 e.printStackTrace();
             }

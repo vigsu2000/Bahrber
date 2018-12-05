@@ -36,11 +36,12 @@
                 android:id="@+id/formTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/form_title"
                 android:textAllCaps="false"
                 android:textSize="@dimen/medium"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,9 +49,8 @@
                 android:id="@+id/constraintLayoutHairType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayoutThickness">
 
@@ -66,7 +66,7 @@
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/hairTypeLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="610dp"
+                    android:layout_height="465dp"
                     android:layout_marginTop="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -83,6 +83,7 @@
 
                         <Button
                             android:id="@+id/button1a"
+                            style="?android:attr/borderlessButtonStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -90,11 +91,11 @@
                             android:text="@string/_1a"
                             android:textColor="@color/formTextColor"
                             android:textSize="@dimen/medium"
-                            android:typeface="sans"
-                            style="?android:attr/borderlessButtonStyle" />
+                            android:typeface="sans" />
 
                         <Button
                             android:id="@+id/button1b"
+                            style="?android:attr/borderlessButtonStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -102,11 +103,11 @@
                             android:text="@string/_1b"
                             android:textColor="@color/formTextColor"
                             android:textSize="@dimen/medium"
-                            android:typeface="sans"
-                            style="?android:attr/borderlessButtonStyle" />
+                            android:typeface="sans" />
 
                         <Button
                             android:id="@+id/button1c"
+                            style="?android:attr/borderlessButtonStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -114,8 +115,7 @@
                             android:text="@string/_1c"
                             android:textColor="@color/formTextColor"
                             android:textSize="@dimen/medium"
-                            android:typeface="sans"
-                            style="?android:attr/borderlessButtonStyle" />
+                            android:typeface="sans" />
 
                     </LinearLayout>
 
@@ -130,6 +130,7 @@
 
                         <Button
                             android:id="@+id/button2a"
+                            style="?android:attr/borderlessButtonStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -137,11 +138,11 @@
                             android:text="@string/_2a"
                             android:textColor="@color/formTextColor"
                             android:textSize="@dimen/medium"
-                            android:typeface="sans"
-                            style="?android:attr/borderlessButtonStyle" />
+                            android:typeface="sans" />
 
                         <Button
                             android:id="@+id/button2b"
+                            style="?android:attr/borderlessButtonStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -149,11 +150,11 @@
                             android:text="@string/_2b"
                             android:textColor="@color/formTextColor"
                             android:textSize="@dimen/medium"
-                            android:typeface="sans"
-                            style="?android:attr/borderlessButtonStyle" />
+                            android:typeface="sans" />
 
                         <Button
                             android:id="@+id/button2c"
+                            style="?android:attr/borderlessButtonStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -161,8 +162,7 @@
                             android:text="@string/_2c"
                             android:textColor="@color/formTextColor"
                             android:textSize="@dimen/medium"
-                            android:typeface="sans"
-                            style="?android:attr/borderlessButtonStyle" />
+                            android:typeface="sans" />
 
                     </LinearLayout>
 
@@ -177,6 +177,7 @@
 
                         <Button
                             android:id="@+id/button3a"
+                            style="?android:attr/borderlessButtonStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -184,11 +185,11 @@
                             android:text="@string/_3a"
                             android:textColor="@color/formTextColor"
                             android:textSize="@dimen/medium"
-                            android:typeface="sans"
-                            style="?android:attr/borderlessButtonStyle" />
+                            android:typeface="sans" />
 
                         <Button
                             android:id="@+id/button3b"
+                            style="?android:attr/borderlessButtonStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -196,11 +197,11 @@
                             android:text="@string/_3b"
                             android:textColor="@color/formTextColor"
                             android:textSize="@dimen/medium"
-                            android:typeface="sans"
-                            style="?android:attr/borderlessButtonStyle" />
+                            android:typeface="sans" />
 
                         <Button
                             android:id="@+id/button3c"
+                            style="?android:attr/borderlessButtonStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -208,8 +209,7 @@
                             android:text="@string/_3c"
                             android:textColor="@color/formTextColor"
                             android:textSize="@dimen/medium"
-                            android:typeface="sans"
-                            style="?android:attr/borderlessButtonStyle" />
+                            android:typeface="sans" />
 
                     </LinearLayout>
 
@@ -224,6 +224,7 @@
 
                         <Button
                             android:id="@+id/button4a"
+                            style="?android:attr/borderlessButtonStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -231,11 +232,11 @@
                             android:text="@string/_4a"
                             android:textColor="@color/formTextColor"
                             android:textSize="@dimen/medium"
-                            android:typeface="sans"
-                            style="?android:attr/borderlessButtonStyle" />
+                            android:typeface="sans" />
 
                         <Button
                             android:id="@+id/button4b"
+                            style="?android:attr/borderlessButtonStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -243,11 +244,11 @@
                             android:text="@string/_4b"
                             android:textColor="@color/formTextColor"
                             android:textSize="@dimen/medium"
-                            android:typeface="sans"
-                            style="?android:attr/borderlessButtonStyle" />
+                            android:typeface="sans" />
 
                         <Button
                             android:id="@+id/button4c"
+                            style="?android:attr/borderlessButtonStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -255,8 +256,7 @@
                             android:text="@string/_4c"
                             android:textColor="@color/formTextColor"
                             android:textSize="@dimen/medium"
-                            android:typeface="sans"
-                            style="?android:attr/borderlessButtonStyle" />
+                            android:typeface="sans" />
 
                     </LinearLayout>
 
@@ -267,8 +267,8 @@
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraintLayoutLength"
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_marginTop="24dp"
+                android:layout_height="178dp"
+                android:layout_marginTop="120dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -297,6 +297,7 @@
 
                     <Button
                         android:id="@+id/buttonShort"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -304,11 +305,11 @@
                         android:text="@string/shortLength"
                         android:textColor="@color/formTextColor"
                         android:textSize="@dimen/small_plus"
-                        android:typeface="sans"
-                        style="?android:attr/borderlessButtonStyle" />
+                        android:typeface="sans" />
 
                     <Button
                         android:id="@+id/buttonMediumLength"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -316,11 +317,11 @@
                         android:text="@string/mediumLength"
                         android:textColor="@color/formTextColor"
                         android:textSize="@dimen/small_plus"
-                        android:typeface="sans"
-                        style="?android:attr/borderlessButtonStyle" />
+                        android:typeface="sans" />
 
                     <Button
                         android:id="@+id/buttonLong"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -328,8 +329,7 @@
                         android:text="@string/longLength"
                         android:textColor="@color/formTextColor"
                         android:textSize="@dimen/small_plus"
-                        android:typeface="sans"
-                        style="?android:attr/borderlessButtonStyle" />
+                        android:typeface="sans" />
 
                 </LinearLayout>
 
@@ -338,9 +338,9 @@
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraintLayoutThickness"
                 android:layout_width="match_parent"
-                android:layout_height="231dp"
-                android:layout_marginTop="16dp"
+                android:layout_height="182dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayoutLength">
 
@@ -362,11 +362,11 @@
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/thickness"
-                    >
+                    app:layout_constraintTop_toBottomOf="@+id/thickness">
 
                     <Button
                         android:id="@+id/buttonFine"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -374,11 +374,11 @@
                         android:text="@string/fine"
                         android:textColor="@color/formTextColor"
                         android:textSize="@dimen/small_plus"
-                        android:typeface="sans"
-                        style="?android:attr/borderlessButtonStyle" />
+                        android:typeface="sans" />
 
                     <Button
                         android:id="@+id/buttonMediumThickness"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -386,11 +386,11 @@
                         android:text="@string/mediumThickness"
                         android:textColor="@color/formTextColor"
                         android:textSize="@dimen/small_plus"
-                        android:typeface="sans"
-                        style="?android:attr/borderlessButtonStyle"/>
+                        android:typeface="sans" />
 
                     <Button
                         android:id="@+id/buttonCoarse"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -398,10 +398,23 @@
                         android:text="@string/coarse"
                         android:textColor="@color/formTextColor"
                         android:textSize="@dimen/small_plus"
-                        android:typeface="sans"
-                        style="?android:attr/borderlessButtonStyle"/>
+                        android:typeface="sans" />
                 </LinearLayout>
             </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="98dp"
+                android:layout_marginTop="68dp"
+                android:gravity="center"
+                android:text="@string/directions"
+                android:textSize="@dimen/small"
+                android:typeface="sans"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>

@@ -9,19 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".FormScreen"
             android:label="@string/title_activity_form_screen"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Home">
+        <activity
+            android:name=".Home"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Result"></activity>
+        <activity
+            android:name=".Result"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

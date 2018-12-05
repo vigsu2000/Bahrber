@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.vignesh.imageupload.MainActivity"
+    android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
     android:orientation="vertical">
 
     <Button
@@ -37,7 +38,7 @@
     <ImageView
         android:id="@+id/imgView1"
         android:layout_width="match_parent"
-        android:layout_height="129dp"
+        android:layout_height="115dp"
         android:textSize="@dimen/small" />
 
     <ImageView

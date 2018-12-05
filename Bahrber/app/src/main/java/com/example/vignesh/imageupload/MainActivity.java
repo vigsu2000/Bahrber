@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_PICK);
                 startActivityForResult(Intent.createChooser(intent, "Select Image"), PICK_IMAGE_REQUEST);
+
                 nextPage.getBackground().setAlpha(255);
                 nextPage.setTextColor(Color.parseColor("#FF000000"));
                 gaveImage = true;

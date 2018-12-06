@@ -37,7 +37,8 @@
     <string name="_1c">1c</string>
     <string name="_1b">1b</string>
     <string name="_1a">1a</string>
-    
+    <string name="help">Help</string>
+
     <!--Buttons-->
     <string name="submit">Submit</string>
     <string name="begin">Begin</string>

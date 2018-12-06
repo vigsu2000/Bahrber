@@ -26,7 +26,7 @@ public class FormScreen extends AppCompatActivity {
     Button buttonShort, buttonMediumLength, buttonLong;
     Button buttonFine, buttonMediumThickness, buttonCoarse;
     Button button1a, button1b, button1c, button2a, button2b, button2c, button3a, button3b, button3c, button4a, button4b, button4c;
-    Button submit;
+    Button submit, help;
     LinearLayout lengthLayout, thicknessLayout, hairType1Layout, hairType2Layout, hairType3Layout, hairType4Layout;
     ConstraintLayout constraintLayoutLength, constraintLayoutThickness, constraingLayoutHairType;
     HashMap<Button, Boolean> lengthButtons, thicknessButtons, hairTypeButtons;
@@ -71,6 +71,7 @@ public class FormScreen extends AppCompatActivity {
         constraintLayoutLength = (ConstraintLayout)findViewById(R.id.constraintLayoutLength);
         constraintLayoutThickness = (ConstraintLayout)findViewById(R.id.constraintLayoutThickness);
         constraingLayoutHairType = (ConstraintLayout)findViewById(R.id.constraintLayoutHairType);
+        help = (Button)findViewById(R.id.help);
         submit = (Button)findViewById(R.id.submit);
 
         //Creates map of length buttons
@@ -149,6 +150,14 @@ public class FormScreen extends AppCompatActivity {
                 });
             }
         }
+
+        help.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Log.d(TAG, "Help button clicked");
+                Intent intent = new Intent(FormScreen.this, HelpScreen.class);
+                startActivity(intent);
+            }
+        });
 
         submit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {

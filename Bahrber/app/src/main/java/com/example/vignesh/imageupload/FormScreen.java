@@ -30,6 +30,7 @@ public class FormScreen extends AppCompatActivity {
     LinearLayout lengthLayout, thicknessLayout, hairType1Layout, hairType2Layout, hairType3Layout, hairType4Layout;
     ConstraintLayout constraintLayoutLength, constraintLayoutThickness, constraingLayoutHairType;
     HashMap<Button, Boolean> lengthButtons, thicknessButtons, hairTypeButtons;
+    HashMap<Integer, Integer> colorChanges;
     ArrayList<HashMap<Button, Boolean>> allGroups;
     HashMap<HashMap<Button, Boolean>, String> groups;
 
@@ -85,6 +86,17 @@ public class FormScreen extends AppCompatActivity {
         thicknessButtons.put(buttonFine, Boolean.TRUE);
         thicknessButtons.put(buttonMediumThickness, Boolean.TRUE);
         thicknessButtons.put(buttonCoarse, Boolean.TRUE);
+
+        //GUI Color changes
+        colorChanges = new HashMap<>();
+        colorChanges.put(R.color.colorPrimary, R.color.colorPrimaryFaded);
+        colorChanges.put(R.color.colorPrimaryDark, R.color.colorPrimaryDarkFaded);
+        colorChanges.put(R.color.colorAccent, R.color.colorAccentFaded);
+        colorChanges.put(R.color.colorPrimaryFaded, R.color.colorPrimary);
+        colorChanges.put(R.color.colorPrimaryDarkFaded, R.color.colorPrimaryDark);
+        colorChanges.put(R.color.colorAccentFaded, R.color.colorAccent);
+
+
 
         //Creates map of hair type buttons
         hairTypeButtons = new HashMap<>();
@@ -163,6 +175,15 @@ public class FormScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Log.d(TAG, "Submit button clicked");
                 Intent intent = new Intent(FormScreen.this, MainActivity.class);
+
+                for (HashMap<Button, Boolean> group : allGroups) {
+                    for (Button button : group.keySet()) {
+                        if (group.get(button)) {
+                            intent.putExtra(groups.get(group), button.getText().toString());
+                        }
+                    }
+                }
+
                 startActivity(intent);
             }
         });

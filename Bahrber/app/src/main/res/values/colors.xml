@@ -3,6 +3,9 @@
     <color name="colorPrimary">#ffcba481</color>
     <color name="colorPrimaryDark">#ffb79a82</color>
     <color name="colorAccent">#ffbfa896</color>
+    <color name="colorPrimaryFaded">#80cba481</color>
+    <color name="colorPrimaryDarkFaded">#80b79a82</color>
+    <color name="colorAccentFaded">#80bfa896</color>
     <color name="formTextColor">#ffffffff</color>
     <color name="background_color">#e8dace</color>
     <color name="greyedOut">#80ffffff</color>

@@ -173,13 +173,19 @@ public class FormScreen extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Log.d(TAG, "Submit button clicked");
-                Intent intent = new Intent(FormScreen.this, MainActivity.class);
+                Intent intent = new Intent(FormScreen.this, Result.class);
 
-                for (HashMap<Button, Boolean> group : allGroups) {
-                    for (Button button : group.keySet()) {
-                        if (group.get(button)) {
-                            intent.putExtra(groups.get(group), button.getText().toString());
-                        }
+//                for (HashMap<Button, Boolean> group : allGroups) {
+//                    for (Button button : group.keySet()) {
+//                        if (group.get(button)) {
+//                            intent.putExtra(groups.get(group), button.getText().toString());
+//                        }
+//                    }
+//                }
+
+                for (Button button : lengthButtons.keySet()) {
+                    if (lengthButtons.get(button)) {
+                        intent.putExtra("length", button.getText().toString());
                     }
                 }
 

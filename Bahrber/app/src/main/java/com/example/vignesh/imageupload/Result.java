@@ -166,6 +166,7 @@ public class Result extends Activity {
                 } else {
                     System.out.println("Pull Failed");
                 }
+                /*
                 System.out.println("Hello");
                 System.out.println(hairLength);
                 if (hairLength.equalsIgnoreCase("Short")) {
@@ -174,7 +175,6 @@ public class Result extends Activity {
                         new UrlToBitmap().execute(url.toString());
                     }
                 } else if (hairLength.equalsIgnoreCase("Medium")) {
-                System.out.println("Here");
                     Object[] urlsMediumHair = mediumHairPictures.keySet().toArray();
                     for (Object url : urlsMediumHair) {
                         new UrlToBitmap().execute(url.toString());
@@ -185,12 +185,31 @@ public class Result extends Activity {
                         new UrlToBitmap().execute(url.toString());
                     }
                 }
+                */
             }
         });
         Button button1 = findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println("Hello");
+                System.out.println(hairLength);
+                if (hairLength.equalsIgnoreCase("Short")) {
+                    Object[] urlsShortHair = shortHairPictures.keySet().toArray();
+                    for (Object url : urlsShortHair) {
+                        new UrlToBitmap().execute(url.toString());
+                    }
+                } else if (hairLength.equalsIgnoreCase("Medium")) {
+                    Object[] urlsMediumHair = mediumHairPictures.keySet().toArray();
+                    for (Object url : urlsMediumHair) {
+                        new UrlToBitmap().execute(url.toString());
+                    }
+                } else if (hairLength.equalsIgnoreCase("Long")) {
+                    Object[] urlsLongHair = longHairPictures.keySet().toArray();
+                    for (Object url : urlsLongHair) {
+                        new UrlToBitmap().execute(url.toString());
+                    }
+                }
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                 intent.setType("image/*");
                 startActivityForResult(Intent.createChooser(

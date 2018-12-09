@@ -3,6 +3,7 @@ package com.example.vignesh.imageupload;
 import java.io.*;
 import android.app.*;
 import android.content.*;
+import android.media.Image;
 import android.os.*;
 import android.util.Log;
 import android.graphics.*;
@@ -77,6 +78,7 @@ public class Result extends Activity {
 
     private String hairLength;
 
+    private Button button1, addImages, findSimilarFace, printFace;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +90,7 @@ public class Result extends Activity {
         longHairPictures = new HashMap<Object, Object>();
         shortHairPictures = new HashMap<Object, Object>();
         mediumHairPictures = new HashMap<Object, Object>();
+
         pd = new ProgressDialog(this);
         pd.setMessage("Uploading....");
         mFirestore = FirebaseFirestore.getInstance();
@@ -188,7 +191,8 @@ public class Result extends Activity {
                 */
             }
         });
-        Button button1 = findViewById(R.id.button1);
+
+        button1 = findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -214,30 +218,39 @@ public class Result extends Activity {
                 intent.setType("image/*");
                 startActivityForResult(Intent.createChooser(
                         intent, "Select Picture"), PICK_IMAGE);
+
+                addImages.setEnabled(true);
+                findSimilarFace.setEnabled(false);
+                printFace.setEnabled(false);
             }
         });
 
 
-        Button addImages = findViewById(R.id.uploadImages);
+        addImages = findViewById(R.id.uploadImages);
         addImages.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 for (Bitmap map : bmapList) {
                     detectAndFrame(map, 1);
                 }
+                findSimilarFace.setEnabled(true);
+                printFace.setEnabled(false);
             }
         });
+        addImages.setEnabled(false);
 
-
-        Button findSimilarFace = findViewById(R.id.findSimilar);
+        findSimilarFace = findViewById(R.id.findSimilar);
         findSimilarFace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 findSimilarFaces();
+                addImages.setEnabled(false);
+                printFace.setEnabled(true);
             }
         });
+        findSimilarFace.setEnabled(false);
 
-        Button printFace = findViewById(R.id.printButton);
+        printFace = findViewById(R.id.printButton);
         printFace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -251,8 +264,11 @@ public class Result extends Activity {
                             imageView.setImageBitmap(bmapListCopy.get(facemap.get(sface.faceId)));
                     }
                 }
+                addImages.setEnabled(false);
+                findSimilarFace.setEnabled(false);
             }
         });
+        printFace.setEnabled(false);
 
 
         detectionProgressDialog = new ProgressDialog(this);

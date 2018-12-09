@@ -30,7 +30,7 @@ public class FormScreen extends AppCompatActivity {
     LinearLayout lengthLayout, thicknessLayout, hairType1Layout, hairType2Layout, hairType3Layout, hairType4Layout;
     ConstraintLayout constraintLayoutLength, constraintLayoutThickness, constraingLayoutHairType;
     HashMap<Button, Boolean> lengthButtons, thicknessButtons, hairTypeButtons;
-    HashMap<Integer, Integer> colorChanges;
+    ArrayList<Integer> opaqueColors, fadedColors;
     ArrayList<HashMap<Button, Boolean>> allGroups;
     HashMap<HashMap<Button, Boolean>, String> groups;
 
@@ -87,16 +87,15 @@ public class FormScreen extends AppCompatActivity {
         thicknessButtons.put(buttonMediumThickness, Boolean.TRUE);
         thicknessButtons.put(buttonCoarse, Boolean.TRUE);
 
-        //GUI Color changes
-        colorChanges = new HashMap<>();
-        colorChanges.put(R.color.colorPrimary, R.color.colorPrimaryFaded);
-        colorChanges.put(R.color.colorPrimaryDark, R.color.colorPrimaryDarkFaded);
-        colorChanges.put(R.color.colorAccent, R.color.colorAccentFaded);
-        colorChanges.put(R.color.colorPrimaryFaded, R.color.colorPrimary);
-        colorChanges.put(R.color.colorPrimaryDarkFaded, R.color.colorPrimaryDark);
-        colorChanges.put(R.color.colorAccentFaded, R.color.colorAccent);
-
-
+        //Button Colors
+        opaqueColors = new ArrayList<>();
+        fadedColors = new ArrayList<>();
+        opaqueColors.add(R.color.colorPrimary);
+        opaqueColors.add(R.color.colorPrimaryDark);
+        opaqueColors.add(R.color.colorAccent);
+        fadedColors.add(R.color.colorPrimaryFaded);
+        fadedColors.add(R.color.colorPrimaryDarkFaded);
+        fadedColors.add(R.color.colorAccentFaded);
 
         //Creates map of hair type buttons
         hairTypeButtons = new HashMap<>();
@@ -199,7 +198,7 @@ public class FormScreen extends AppCompatActivity {
             if (button != target) {
                 if (group.get(button)) {
                     group.put(button, Boolean.FALSE);
-                    button.getBackground().setAlpha(FADED_COLOR);
+//                    button.getBackground().setAlpha(FADED_COLOR);
                 }
             } else {
                 if (!group.get(button)) {
@@ -258,14 +257,22 @@ public class FormScreen extends AppCompatActivity {
                 int colorId = buttonColor.getColor();
 
                 if (group.get(button)) {
-                    System.out.println(colorId);
-                    ColorUtils.setAlphaComponent(colorId, OPAQUE_COLOR);
-                    System.out.println(colorId);
+                    for (int color : opaqueColors) {
+                        if (Color.red(colorId) == Color.red(color) &&
+                                Color.green(colorId) == Color.green(color) &&
+                                Color.blue(colorId) == Color.blue(color)) {
+                            button.setBackgroundColor(color);
+                        }
+                    }
                 } else {
-                    ColorUtils.setAlphaComponent(colorId, FADED_COLOR);
+                    for (int color : fadedColors) {
+                        if (Color.red(colorId) == Color.red(color) &&
+                                Color.green(colorId) == Color.green(color) &&
+                                Color.blue(colorId) == Color.blue(color)) {
+                            button.setBackgroundColor(color);
+                        }
+                    }
                 }
-
-                button.setBackgroundColor(colorId);
             }
         }
 

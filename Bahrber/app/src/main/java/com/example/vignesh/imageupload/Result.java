@@ -72,6 +72,7 @@ public class Result extends Activity {
     private HashMap<Object, Object> longHairPictures;
     private HashMap<Object, Object> mediumHairPictures;
     private HashMap<Object, Object> shortHairPictures;
+    private HashMap<Object, Object> currentMap;
     private HashMap<UUID, Integer> facemap = new HashMap<>();
 
     private int index = 0;
@@ -86,7 +87,6 @@ public class Result extends Activity {
         setContentView(R.layout.activity_result);
         Intent activityThatCalled = getIntent();
         hairLength = activityThatCalled.getExtras().getString("length");
-        System.out.println(hairLength);
         longHairPictures = new HashMap<Object, Object>();
         shortHairPictures = new HashMap<Object, Object>();
         mediumHairPictures = new HashMap<Object, Object>();
@@ -109,17 +109,9 @@ public class Result extends Activity {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         Map<String, Object> x = document.getData();
-                        Object type = new Object();
-                        Object url = new Object();
-
-                        for (String a : x.keySet()) {
-                            type = a;
-                        }
-                        for (Object c : x.values()) {
-                            url = c;
-                        }
+                        Object type = x.get("type");
+                        Object url = x.get("url");
                         longHairPictures.put(url, type);
-                        System.out.println(url);
                     }
                 } else {
                     System.out.println("Pull Failed");
@@ -133,15 +125,8 @@ public class Result extends Activity {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         Map<String, Object> x = document.getData();
-                        Object type = new Object();
-                        Object url = new Object();
-
-                        for (String a : x.keySet()) {
-                            type = a;
-                        }
-                        for (Object c : x.values()) {
-                            url = c;
-                        }
+                        Object type = x.get("type");
+                        Object url = x.get("url");
                         mediumHairPictures.put(url, type);
                     }
                 } else {
@@ -156,39 +141,13 @@ public class Result extends Activity {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         Map<String, Object> x = document.getData();
-                        Object type = new Object();
-                        Object url = new Object();
-                        for (String a : x.keySet()) {
-                            type = a;
-                        }
-                        for (Object c : x.values()) {
-                            url = c;
-                        }
+                        Object type = x.get("type");
+                        Object url = x.get("url");
                         shortHairPictures.put(url, type);
                     }
                 } else {
                     System.out.println("Pull Failed");
                 }
-                /*
-                System.out.println("Hello");
-                System.out.println(hairLength);
-                if (hairLength.equalsIgnoreCase("Short")) {
-                    Object[] urlsShortHair = shortHairPictures.keySet().toArray();
-                    for (Object url : urlsShortHair) {
-                        new UrlToBitmap().execute(url.toString());
-                    }
-                } else if (hairLength.equalsIgnoreCase("Medium")) {
-                    Object[] urlsMediumHair = mediumHairPictures.keySet().toArray();
-                    for (Object url : urlsMediumHair) {
-                        new UrlToBitmap().execute(url.toString());
-                    }
-                } else if (hairLength.equalsIgnoreCase("Long")) {
-                    Object[] urlsLongHair = longHairPictures.keySet().toArray();
-                    for (Object url : urlsLongHair) {
-                        new UrlToBitmap().execute(url.toString());
-                    }
-                }
-                */
             }
         });
 
@@ -196,19 +155,20 @@ public class Result extends Activity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("Hello");
-                System.out.println(hairLength);
                 if (hairLength.equalsIgnoreCase("Short")) {
+                    currentMap = shortHairPictures;
                     Object[] urlsShortHair = shortHairPictures.keySet().toArray();
                     for (Object url : urlsShortHair) {
                         new UrlToBitmap().execute(url.toString());
                     }
                 } else if (hairLength.equalsIgnoreCase("Medium")) {
+                    currentMap = mediumHairPictures;
                     Object[] urlsMediumHair = mediumHairPictures.keySet().toArray();
                     for (Object url : urlsMediumHair) {
                         new UrlToBitmap().execute(url.toString());
                     }
                 } else if (hairLength.equalsIgnoreCase("Long")) {
+                    currentMap = longHairPictures;
                     Object[] urlsLongHair = longHairPictures.keySet().toArray();
                     for (Object url : urlsLongHair) {
                         new UrlToBitmap().execute(url.toString());
@@ -218,7 +178,6 @@ public class Result extends Activity {
                 intent.setType("image/*");
                 startActivityForResult(Intent.createChooser(
                         intent, "Select Picture"), PICK_IMAGE);
-
                 addImages.setEnabled(true);
                 findSimilarFace.setEnabled(false);
                 printFace.setEnabled(false);
@@ -499,7 +458,6 @@ public class Result extends Activity {
                 Bitmap myBitmap = BitmapFactory.decodeStream(input);
                 bmapList.add(myBitmap);
                 bmapListCopy.add(myBitmap.copy(myBitmap.getConfig(), myBitmap.isMutable()));
-                System.out.println("Bitmap List size " + bmapList.size());
                 return bmapList;
             } catch (IOException e) {
                 // Log exception

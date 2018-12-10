@@ -10,42 +10,46 @@
         android:layout_above="@+id/button1"
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
-        android:layout_marginBottom="170dp"
+        android:layout_marginBottom="15dp"
         android:background="@color/colorPrimaryDark"
         android:contentDescription="Image with faces to analyze" />
 
     <Button
+        android:id="@+id/button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Step 1) Add Photo"
-        android:id="@+id/button1"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="139dp"
+        android:text="Step 1) Add Photo" />
 
     <Button
         android:id="@+id/uploadImages"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="49dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="92dp"
         android:text="Step 2) Run Bahrber Suggestions" />
 
     <Button
         android:id="@+id/findSimilar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="98dp"
+        android:layout_marginBottom="46dp"
         android:text="Step 3) Get Result" />
 
     <Button
         android:id="@+id/printButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/findSimilar"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="147dp"
+        android:layout_marginBottom="0dp"
         android:text="Step 4) Print Result" />
 
 </RelativeLayout>

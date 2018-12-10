@@ -34,8 +34,6 @@ public class FormScreen extends AppCompatActivity {
     ArrayList<HashMap<Button, Boolean>> allGroups;
     HashMap<HashMap<Button, Boolean>, String> groups;
 
-    final int FADED_COLOR = 0x80;
-    final int OPAQUE_COLOR = 0xff;
     final int ANIMATION_DURATION = 400;
 
     @Override
@@ -90,12 +88,12 @@ public class FormScreen extends AppCompatActivity {
         //Button Colors
         opaqueColors = new ArrayList<>();
         fadedColors = new ArrayList<>();
-        opaqueColors.add(R.color.colorPrimary);
-        opaqueColors.add(R.color.colorPrimaryDark);
-        opaqueColors.add(R.color.colorAccent);
-        fadedColors.add(R.color.colorPrimaryFaded);
-        fadedColors.add(R.color.colorPrimaryDarkFaded);
-        fadedColors.add(R.color.colorAccentFaded);
+        opaqueColors.add(getResources().getColor(R.color.colorPrimary));
+        opaqueColors.add(getResources().getColor(R.color.colorPrimaryDark));
+        opaqueColors.add(getResources().getColor(R.color.colorAccent));
+        fadedColors.add(getResources().getColor(R.color.colorPrimaryFaded));
+        fadedColors.add(getResources().getColor(R.color.colorPrimaryDarkFaded));
+        fadedColors.add(getResources().getColor(R.color.colorAccentFaded));
 
         //Creates map of hair type buttons
         hairTypeButtons = new HashMap<>();
@@ -156,7 +154,6 @@ public class FormScreen extends AppCompatActivity {
                         }
 
                         drawButtons();
-//                        printButtonStates();
                         }
                 });
             }
@@ -193,7 +190,6 @@ public class FormScreen extends AppCompatActivity {
             }
         });
 
-        printButtonStates();
         drawButtons();
     }
 
@@ -204,7 +200,6 @@ public class FormScreen extends AppCompatActivity {
             if (button != target) {
                 if (group.get(button)) {
                     group.put(button, Boolean.FALSE);
-//                    button.getBackground().setAlpha(FADED_COLOR);
                 }
             } else {
                 if (!group.get(button)) {
@@ -226,21 +221,6 @@ public class FormScreen extends AppCompatActivity {
                 button.startAnimation(alphaAnim);
                 group.put(button, Boolean.TRUE);
             }
-        }
-    }
-
-    void printButtonStates() {
-        for (HashMap<Button, Boolean> group: allGroups) {
-            for (Button button : group.keySet()) {
-                int color = Color.TRANSPARENT;
-                Drawable background = button.getBackground();
-                if (background instanceof ColorDrawable) {
-                    color = ((ColorDrawable) background).getColor();
-                }
-                System.out.println(button.getId() + " " + color + ": " + (group.get(button) ? "opaque" : "faded"));
-            }
-            System.out.println();
-            System.out.println();
         }
     }
 

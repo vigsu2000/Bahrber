@@ -185,6 +185,11 @@ public class FormScreen extends AppCompatActivity {
                         intent.putExtra("length", button.getText().toString());
                     }
                 }
+                for (Button button : hairTypeButtons.keySet()) {
+                    if (hairTypeButtons.get(button)) {
+                        intent.putExtra("type", button.getText().toString().substring(0, 1));
+                    }
+                }
 
                 startActivity(intent);
             }

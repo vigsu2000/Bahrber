@@ -7,6 +7,20 @@
     android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
     tools:context=".HelpScreen">
 
+    <!--
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="0dp"
+        android:layout_height="450dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+        -->
+
     <TextView
         android:id="@+id/hairType"
         android:layout_width="wrap_content"
@@ -22,20 +36,21 @@
 
     <Button
         android:id="@+id/helpBack"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/back"
         android:textColor="#000000"
         android:textSize="@dimen/small"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.901" />
+        app:layout_constraintVertical_bias="0.87" />
 
     <TextView
         android:id="@+id/description1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="31dp"
         android:text="@string/type_Description_1"
         android:textColor="#000000"
@@ -49,7 +64,7 @@
 
     <TextView
         android:id="@+id/description2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/type_Description_2"
         android:textColor="#000000"
@@ -63,7 +78,7 @@
 
     <TextView
         android:id="@+id/description3"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/type_Description_3"
         android:textColor="#000000"
@@ -77,16 +92,16 @@
 
     <TextView
         android:id="@+id/description4"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/type_Description_4"
         android:textColor="#000000"
         android:textSize="@dimen/small"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537" />
+        app:layout_constraintVertical_bias="0.546" />
 
 </android.support.constraint.ConstraintLayout>

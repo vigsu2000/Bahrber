@@ -1,7 +1,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
 
     <ImageView
         android:id="@+id/imageView1"
@@ -22,7 +25,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginBottom="139dp"
-        android:text="Step 1) Add Photo" />
+        android:textSize="@dimen/small"
+        android:text="@string/result_1" />
 
     <Button
         android:id="@+id/uploadImages"
@@ -32,7 +36,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginBottom="92dp"
-        android:text="Step 2) Run Bahrber Suggestions" />
+        android:textSize="@dimen/small"
+        android:text="@string/result_2" />
 
     <Button
         android:id="@+id/findSimilar"
@@ -41,7 +46,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="46dp"
-        android:text="Step 3) Get Result" />
+        android:textSize="@dimen/small"
+        android:text="@string/result_3" />
 
     <Button
         android:id="@+id/printButton"
@@ -50,6 +56,7 @@
         android:layout_alignEnd="@+id/findSimilar"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp"
-        android:text="Step 4) Print Result" />
+        android:textSize="@dimen/small"
+        android:text="@string/result_4" />
 
 </RelativeLayout>

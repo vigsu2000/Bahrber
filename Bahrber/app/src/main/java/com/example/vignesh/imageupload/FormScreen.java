@@ -241,6 +241,7 @@ public class FormScreen extends AppCompatActivity {
         return numSelectedButtons;
     }
 
+
     void drawButtons() {
         for (HashMap<Button, Boolean> group: allGroups) {
             for (Button button : group.keySet()) {

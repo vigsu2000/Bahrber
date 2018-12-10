@@ -196,6 +196,7 @@ public class Result extends Activity {
                 for (Bitmap map : bmapList) {
                     detectAndFrame(map, 1);
                 }
+                button1.setEnabled(false);
                 findSimilarFace.setEnabled(true);
                 printFace.setEnabled(false);
             }
@@ -207,6 +208,7 @@ public class Result extends Activity {
             @Override
             public void onClick(View v) {
                 findSimilarFaces();
+                button1.setEnabled(false);
                 addImages.setEnabled(false);
                 printFace.setEnabled(true);
             }
@@ -227,6 +229,7 @@ public class Result extends Activity {
                             imageView.setImageBitmap(bmapListCopy.get(facemap.get(sface.faceId)));
                     }
                 }
+                button1.setEnabled(false);
                 addImages.setEnabled(false);
                 findSimilarFace.setEnabled(false);
             }

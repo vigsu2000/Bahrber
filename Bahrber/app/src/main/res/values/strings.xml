@@ -13,7 +13,7 @@
     <string name="title_activity_result">Result</string>
 
     <!--Form-->
-    <string name="directions">Please input your desired haircut length, current hair thickness, and current hair type. MAKE SURE TO EVENTUALLY EXPLAIN HAIRTYPE</string>
+    <string name="directions">Please input your desired haircut length, current hair thickness, and current hair type.</string>
     <string name="thickness">Thickness</string>
     <string name="desired_length">Desired Length</string>
     <string name="shortLength">Short</string>
@@ -24,7 +24,7 @@
     <string name="mediumThickness">Medium</string>
     <string name="coarse">Coarse</string>
     <string name="terms">Terms</string>
-    <string name="hair_type">Hair Type</string>
+    <string name="hair_type">Hair Types</string>
     <string name="_4c">4c</string>
     <string name="_4b">4b</string>
     <string name="_4a">4a</string>
@@ -37,12 +37,19 @@
     <string name="_1c">1c</string>
     <string name="_1b">1b</string>
     <string name="_1a">1a</string>
-    <string name="help">Help</string>
+    <string name="help">Help me choose</string>
+
+    <!--Hair Type Descriptions-->
+    <string name="type_Description_1">Hair Type 1: Straight &#xA;</string>
+    <string name="type_Description_2">Hair Type 2: Wavy &#xD;</string>
+    <string name="type_Description_3">Hair Type 3: Curly &#xD;</string>
+    <string name="type_Description_4">Hair Type 4: Kinky or Coily &#xD;</string>
 
     <!--Buttons-->
     <string name="submit">Submit</string>
     <string name="begin">Begin</string>
     <string name="next">Next</string>
+    <string name="back">Back</string>
 
     <!--Image Descriptions-->
     <string name="logo_description">App logo</string>

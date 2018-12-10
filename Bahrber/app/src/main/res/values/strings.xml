@@ -19,7 +19,7 @@
     <string name="shortLength">Short</string>
     <string name="mediumLength">Medium</string>
     <string name="longLength">Long</string>
-    <string name="form_title">Find your Style</string>
+    <string name="form_title">FIND YOUR STYLE</string>
     <string name="fine">Fine</string>
     <string name="mediumThickness">Medium</string>
     <string name="coarse">Coarse</string>
@@ -37,19 +37,24 @@
     <string name="_1c">1c</string>
     <string name="_1b">1b</string>
     <string name="_1a">1a</string>
-    <string name="help">Help me choose</string>
+    <string name="help">HELP ME CHOOSE</string>
 
     <!--Hair Type Descriptions-->
-    <string name="type_Description_1">Hair Type 1: Straight &#xA;</string>
-    <string name="type_Description_2">Hair Type 2: Wavy &#xD;</string>
-    <string name="type_Description_3">Hair Type 3: Curly &#xD;</string>
-    <string name="type_Description_4">Hair Type 4: Kinky or Coily &#xD;</string>
+    <string name="type_Description_1">&#009;&#009;&#009;&#009;&#009;Hair Type 1: Straight &#xA;</string>
+    <string name="type_Description_2">&#009;&#009;&#009;&#009;&#009;Hair Type 2: Wavy &#xD;</string>
+    <string name="type_Description_3">&#009;&#009;&#009;&#009;&#009;Hair Type 3: Curly &#xD;</string>
+    <string name="type_Description_4">&#009;&#009;&#009;&#009;&#009;Hair Type 4: Kinky or Coily &#xD;</string>
 
     <!--Buttons-->
-    <string name="submit">Submit</string>
-    <string name="begin">Begin</string>
-    <string name="next">Next</string>
-    <string name="back">Back</string>
+    <string name="submit">SUBMIT</string>
+    <string name="begin">BEGIN</string>
+    <string name="next">NEXT</string>
+    <string name="back">BACK</string>
+
+    <string name="result_1">STEP 1) ADD PHOTO</string>
+    <string name="result_2">STEP 2) RUN BAHRBER SUGGESTIONS</string>
+    <string name="result_3">STEP 3) GET RESULT</string>
+    <string name="result_4">STEP 4) PRINT RESULT</string>
 
     <!--Image Descriptions-->
     <string name="logo_description">App logo</string>

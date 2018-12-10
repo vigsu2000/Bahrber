@@ -16,7 +16,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Browse for a face image"
+        android:text="Step 1) Add Photo"
         android:id="@+id/button1"
         android:layout_alignParentBottom="true"/>
 
@@ -27,7 +27,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="72dp"
-        android:text="Allocate Database" />
+        android:text="Step 2) Run Bahrber Suggestions" />
 
     <Button
         android:id="@+id/findSimilar"
@@ -36,7 +36,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="133dp"
-        android:text="Find Similiar Face" />
+        android:text="Step 3) Get Result" />
 
     <Button
         android:id="@+id/printButton"
@@ -45,6 +45,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="188dp"
-        android:text="Print IMage" />
+        android:text="Step 4) Print Result" />
 
 </RelativeLayout>

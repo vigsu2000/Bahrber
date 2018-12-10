@@ -72,12 +72,12 @@ public class Result extends Activity {
     private HashMap<Object, Object> longHairPictures;
     private HashMap<Object, Object> mediumHairPictures;
     private HashMap<Object, Object> shortHairPictures;
-    private HashMap<Object, Object> currentMap;
     private HashMap<UUID, Integer> facemap = new HashMap<>();
 
     private int index = 0;
 
     private String hairLength;
+    private String hairType;
 
     private Button button1, addImages, findSimilarFace, printFace;
 
@@ -87,6 +87,7 @@ public class Result extends Activity {
         setContentView(R.layout.activity_result);
         Intent activityThatCalled = getIntent();
         hairLength = activityThatCalled.getExtras().getString("length");
+        hairType = activityThatCalled.getExtras().getString("type");
         longHairPictures = new HashMap<Object, Object>();
         shortHairPictures = new HashMap<Object, Object>();
         mediumHairPictures = new HashMap<Object, Object>();
@@ -156,22 +157,25 @@ public class Result extends Activity {
             @Override
             public void onClick(View v) {
                 if (hairLength.equalsIgnoreCase("Short")) {
-                    currentMap = shortHairPictures;
                     Object[] urlsShortHair = shortHairPictures.keySet().toArray();
                     for (Object url : urlsShortHair) {
-                        new UrlToBitmap().execute(url.toString());
+                        if (shortHairPictures.get(url).toString().contains(hairType)) {
+                            new UrlToBitmap().execute(url.toString());
+                        }
                     }
                 } else if (hairLength.equalsIgnoreCase("Medium")) {
-                    currentMap = mediumHairPictures;
                     Object[] urlsMediumHair = mediumHairPictures.keySet().toArray();
                     for (Object url : urlsMediumHair) {
-                        new UrlToBitmap().execute(url.toString());
+                        if (mediumHairPictures.get(url).toString().contains(hairType)) {
+                            new UrlToBitmap().execute(url.toString());
+                        }
                     }
                 } else if (hairLength.equalsIgnoreCase("Long")) {
-                    currentMap = longHairPictures;
                     Object[] urlsLongHair = longHairPictures.keySet().toArray();
                     for (Object url : urlsLongHair) {
-                        new UrlToBitmap().execute(url.toString());
+                        if (longHairPictures.get(url).toString().contains(hairType)) {
+                            new UrlToBitmap().execute(url.toString());
+                        }
                     }
                 }
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);

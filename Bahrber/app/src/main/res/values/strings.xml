@@ -24,7 +24,7 @@
     <string name="mediumThickness">Medium</string>
     <string name="coarse">Coarse</string>
     <string name="terms">Terms</string>
-    <string name="hair_type">Hair Types</string>
+    <string name="hair_type">Hair Curliness</string>
     <string name="_4c">4c</string>
     <string name="_4b">4b</string>
     <string name="_4a">4a</string>
@@ -40,10 +40,36 @@
     <string name="help">HELP ME CHOOSE</string>
 
     <!--Hair Type Descriptions-->
-    <string name="type_Description_1">&#009;&#009;&#009;&#009;&#009;Hair Type 1: Straight &#xA;</string>
-    <string name="type_Description_2">&#009;&#009;&#009;&#009;&#009;Hair Type 2: Wavy &#xD;</string>
-    <string name="type_Description_3">&#009;&#009;&#009;&#009;&#009;Hair Type 3: Curly &#xD;</string>
-    <string name="type_Description_4">&#009;&#009;&#009;&#009;&#009;Hair Type 4: Kinky or Coily &#xD;</string>
+    <string name="hair_description">
+        <![CDATA[
+        <b>Hair Type 1: Straight</b> <br>
+            1A. Stick-straight. <br>
+            1B. Straight but with a slight body wave adding some volume. <br>
+            1C. Straight with body wave and one or two visible S-waves (e.g. at nape of neck or temples). <br>
+        <br>
+
+        <b>Hair Type 2: Wavy</b> <br>
+            2A. Loose with stretched S-waves throughout. <br>
+            2B. Shorter with more distinct S-waves (resembling e.g. braided damp hair). <br>
+            2C. Distinct S-waves, some spiral curling. <br>
+        <br>
+
+        <b>Hair Type 3: Curly</b> <br>
+            3A. Big, loose spiral curls. <br>
+            3B. Bouncy ringlets. <br>
+            3C. Tight corkscrews. <br>
+        <br>
+
+        <b>Hair Type 4: Kinky</b> <br>
+            4A. Tightly coiled S-curls. <br>
+            4B. Z-patterned (tightly coiled, sharply angled) <br>
+            4C. Mostly Z-patterned (tightly kinked, less definition)
+         <br>
+         <br>
+
+         FIA hair typing system
+        ]]>
+    </string>
 
     <!--Buttons-->
     <string name="submit">SUBMIT</string>

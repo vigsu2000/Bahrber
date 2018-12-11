@@ -152,7 +152,7 @@ public class Result extends Activity {
             }
         });
 
-        button1 = findViewById(R.id.button1);
+        button1 = findViewById(R.id.addPhoto);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -235,7 +235,6 @@ public class Result extends Activity {
             }
         });
         printFace.setEnabled(false);
-
 
         detectionProgressDialog = new ProgressDialog(this);
     }

@@ -1,2 +1,0 @@
-# Referenced at /Users/VIGNESH/Desktop/Bahrber/ImageUpload/app/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:23
--keep class android.support.multidex.MultiDexApplication { <init>(...); }

@@ -79,7 +79,7 @@ public class Result extends Activity {
     private String hairLength;
     private String hairType;
 
-    private Button button1, addImages, findSimilarFace, printFace;
+    private Button addPhoto, addImages, findSimilarFace, printFace;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -152,8 +152,8 @@ public class Result extends Activity {
             }
         });
 
-        button1 = findViewById(R.id.addPhoto);
-        button1.setOnClickListener(new View.OnClickListener() {
+        addPhoto = findViewById(R.id.addPhoto);
+        addPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (hairLength.equalsIgnoreCase("Short")) {
@@ -196,7 +196,7 @@ public class Result extends Activity {
                 for (Bitmap map : bmapList) {
                     detectAndFrame(map, 1);
                 }
-                button1.setEnabled(false);
+                addPhoto.setEnabled(false);
                 findSimilarFace.setEnabled(true);
                 printFace.setEnabled(false);
             }
@@ -208,7 +208,7 @@ public class Result extends Activity {
             @Override
             public void onClick(View v) {
                 findSimilarFaces();
-                button1.setEnabled(false);
+                addPhoto.setEnabled(false);
                 addImages.setEnabled(false);
                 printFace.setEnabled(true);
             }
@@ -229,7 +229,7 @@ public class Result extends Activity {
                             imageView.setImageBitmap(bmapListCopy.get(facemap.get(sface.faceId)));
                     }
                 }
-                button1.setEnabled(false);
+                addPhoto.setEnabled(false);
                 addImages.setEnabled(false);
                 findSimilarFace.setEnabled(false);
             }

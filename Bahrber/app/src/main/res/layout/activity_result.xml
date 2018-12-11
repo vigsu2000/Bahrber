@@ -15,7 +15,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginBottom="15dp"
         android:background="@color/colorPrimaryDark"
-        android:contentDescription="Image with faces to analyze" />
+        android:contentDescription="@string/result" />
 
     <Button
         android:id="@+id/addPhoto"

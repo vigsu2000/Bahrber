@@ -85,4 +85,5 @@
     <!--Image Descriptions-->
     <string name="logo_description">App logo</string>
     <string name="user_upload_description">Description of the Picture the User Uploaded</string>
+    <string name="result">Result image</string>
 </resources>
